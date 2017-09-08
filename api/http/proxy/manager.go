@@ -5,7 +5,7 @@ import (
 	"net/url"
 
 	"github.com/orcaman/concurrent-map"
-	"github.com/iloveyou416068/portainer"
+	"github.com/portainer/portainer"
 )
 
 // Manager represents a service used to manage Docker proxies.

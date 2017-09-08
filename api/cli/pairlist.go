@@ -1,7 +1,7 @@
 package cli
 
 import (
-	"github.com/iloveyou416068/portainer"
+	"github.com/portainer/portainer"
 
 	"fmt"
 	"gopkg.in/alecthomas/kingpin.v2"

@@ -2,8 +2,8 @@ package bolt
 
 import (
 	"github.com/boltdb/bolt"
-	"github.com/iloveyou416068/portainer"
-	"github.com/iloveyou416068/portainer/bolt/internal"
+	"github.com/portainer/portainer"
+	"github.com/portainer/portainer/bolt/internal"
 )
 
 func (m *Migrator) updateResourceControlsToDBVersion2() error {

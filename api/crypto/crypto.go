@@ -1,7 +1,7 @@
 package crypto
 
 import (
-	"golang.org/x/crypto/bcrypt"
+	"src/golang.org/x/crypto/bcrypt"
 )
 
 // Service represents a service for encrypting/hashing data.

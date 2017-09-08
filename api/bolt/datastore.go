@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/boltdb/bolt"
-	"github.com/iloveyou416068/portainer"
+	"github.com/portainer/portainer"
 )
 
 // Store defines the implementation of portainer.DataStore using

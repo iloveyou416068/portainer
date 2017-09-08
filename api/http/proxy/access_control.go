@@ -1,6 +1,6 @@
 package proxy
 
-import "github.com/iloveyou416068/portainer"
+import "github.com/portainer/portainer"
 
 func canUserAccessResource(userID portainer.UserID, userTeamIDs []portainer.TeamID, resourceControl *portainer.ResourceControl) bool {
 	for _, authorizedUserAccess := range resourceControl.UserAccesses {

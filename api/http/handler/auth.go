@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/iloveyou416068/portainer"
+	"github.com/portainer/portainer"
 
 	"encoding/json"
 	"log"
@@ -10,8 +10,8 @@ import (
 
 	"github.com/asaskevich/govalidator"
 	"github.com/gorilla/mux"
-	httperror "github.com/iloveyou416068/portainer/http/error"
-	"github.com/iloveyou416068/portainer/http/security"
+	httperror "github.com/portainer/portainer/http/error"
+	"github.com/portainer/portainer/http/security"
 )
 
 // AuthHandler represents an HTTP API handler for managing authentication.

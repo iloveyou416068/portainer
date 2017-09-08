@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/iloveyou416068/portainer"
-	"github.com/iloveyou416068/portainer/crypto"
+	"github.com/portainer/portainer"
+	"github.com/portainer/portainer/crypto"
 
 	"gopkg.in/ldap.v2"
 )

@@ -1,6 +1,6 @@
 package bolt
 
-import "github.com/iloveyou416068/portainer"
+import "github.com/portainer/portainer"
 
 // Migrator defines a service to migrate data after a Portainer version update.
 type Migrator struct {

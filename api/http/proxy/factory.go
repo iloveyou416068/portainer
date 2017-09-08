@@ -5,8 +5,8 @@ import (
 	"net/http/httputil"
 	"net/url"
 
-	"github.com/iloveyou416068/portainer"
-	"github.com/iloveyou416068/portainer/crypto"
+	"github.com/portainer/portainer"
+	"github.com/portainer/portainer/crypto"
 )
 
 // proxyFactory is a factory to create reverse proxies to Docker endpoints

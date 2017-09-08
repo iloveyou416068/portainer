@@ -1,6 +1,6 @@
 package security
 
-import "github.com/iloveyou416068/portainer"
+import "github.com/portainer/portainer"
 
 // AuthorizedResourceControlDeletion ensure that the user can delete a resource control object.
 // A non-administrator user cannot delete a resource control where:

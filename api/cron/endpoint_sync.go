@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/iloveyou416068/portainer"
+	"github.com/portainer/portainer"
 )
 
 type (

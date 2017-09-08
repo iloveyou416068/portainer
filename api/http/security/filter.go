@@ -1,6 +1,6 @@
 package security
 
-import "github.com/iloveyou416068/portainer"
+import "github.com/portainer/portainer"
 
 // FilterUserTeams filters teams based on user role.
 // non-administrator users only have access to team they are member of.

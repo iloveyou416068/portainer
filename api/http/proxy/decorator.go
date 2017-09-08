@@ -1,6 +1,6 @@
 package proxy
 
-import "github.com/iloveyou416068/portainer"
+import "github.com/portainer/portainer"
 
 // decorateVolumeList loops through all volumes and will decorate any volume with an existing resource control.
 // Volume object schema reference: https://docs.docker.com/engine/api/v1.28/#operation/VolumeList

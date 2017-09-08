@@ -1,6 +1,6 @@
 package proxy
 
-import "github.com/iloveyou416068/portainer"
+import "github.com/portainer/portainer"
 
 func getResourceControlByResourceID(resourceID string, resourceControls []portainer.ResourceControl) *portainer.ResourceControl {
 	for _, resourceControl := range resourceControls {
