@@ -25,7 +25,7 @@ rules:
   no-dupe-keys: error
   no-duplicate-case: error
   no-empty-character-class: error
-  no-empty: error
+  no-empty: off
   no-ex-assign: error
   no-extra-boolean-cast: error
   no-extra-parens: off
@@ -55,9 +55,9 @@ rules:
   array-callback-return: off
   block-scoped-var: off
   class-methods-use-this: off
-  complexity:
-    - error
-    - 6
+  complexity: off
+   ## - error
+  ##  - 6
   consistent-return: off
   curly: off
   default-case: off
@@ -191,9 +191,9 @@ rules:
   max-nested-callbacks: off
   max-params: off
   max-statements-per-line: off
-  max-statements:
-    - error
-    - 30
+  max-statements: off
+    #- error
+    #- 30
   multiline-ternary: off
   new-cap: off
   new-parens: off

@@ -7,6 +7,6 @@ angular.module('portainer.services')
                 }
                 return key;
             }
-        }
+        };
         return languageSwitch;
     }]);
