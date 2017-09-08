@@ -1,10 +1,10 @@
 package http
 
 import (
-	"github.com/portainer/portainer"
-	"github.com/portainer/portainer/http/handler"
-	"github.com/portainer/portainer/http/proxy"
-	"github.com/portainer/portainer/http/security"
+	"github.com/iloveyou416068/portainer"
+	"github.com/iloveyou416068/portainer/http/handler"
+	"github.com/iloveyou416068/portainer/http/proxy"
+	"github.com/iloveyou416068/portainer/http/security"
 
 	"net/http"
 )

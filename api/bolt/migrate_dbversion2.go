@@ -1,6 +1,6 @@
 package bolt
 
-import "github.com/portainer/portainer"
+import "github.com/iloveyou416068/portainer"
 
 func (m *Migrator) updateSettingsToVersion3() error {
 	legacySettings, err := m.SettingsService.Settings()

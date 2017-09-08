@@ -1,6 +1,6 @@
 package proxy
 
-import "github.com/portainer/portainer"
+import "github.com/iloveyou416068/portainer"
 
 // filterVolumeList loops through all volumes, filters volumes without any resource control (public resources) or with
 // any resource control giving access to the user (these volumes will be decorated).

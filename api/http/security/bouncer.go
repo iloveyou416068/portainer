@@ -1,8 +1,8 @@
 package security
 
 import (
-	"github.com/portainer/portainer"
-	httperror "github.com/portainer/portainer/http/error"
+	"github.com/iloveyou416068/portainer"
+	httperror "github.com/iloveyou416068/portainer/http/error"
 
 	"net/http"
 	"strings"
