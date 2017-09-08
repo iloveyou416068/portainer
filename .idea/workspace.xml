@@ -1,65 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a39cd31-d370-405e-9763-54e85c935476" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/datastore.go" afterPath="$PROJECT_DIR$/api/bolt/datastore.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/dockerhub_service.go" afterPath="$PROJECT_DIR$/api/bolt/dockerhub_service.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/endpoint_service.go" afterPath="$PROJECT_DIR$/api/bolt/endpoint_service.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/internal/internal.go" afterPath="$PROJECT_DIR$/api/bolt/internal/internal.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/migrate_dbversion0.go" afterPath="$PROJECT_DIR$/api/bolt/migrate_dbversion0.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/migrate_dbversion1.go" afterPath="$PROJECT_DIR$/api/bolt/migrate_dbversion1.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/migrate_dbversion2.go" afterPath="$PROJECT_DIR$/api/bolt/migrate_dbversion2.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/migrator.go" afterPath="$PROJECT_DIR$/api/bolt/migrator.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/registry_service.go" afterPath="$PROJECT_DIR$/api/bolt/registry_service.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/resource_control_service.go" afterPath="$PROJECT_DIR$/api/bolt/resource_control_service.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/settings_service.go" afterPath="$PROJECT_DIR$/api/bolt/settings_service.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/team_membership_service.go" afterPath="$PROJECT_DIR$/api/bolt/team_membership_service.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/team_service.go" afterPath="$PROJECT_DIR$/api/bolt/team_service.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/user_service.go" afterPath="$PROJECT_DIR$/api/bolt/user_service.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/bolt/version_service.go" afterPath="$PROJECT_DIR$/api/bolt/version_service.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/cli/cli.go" afterPath="$PROJECT_DIR$/api/cli/cli.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/cli/pairlist.go" afterPath="$PROJECT_DIR$/api/cli/pairlist.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/cmd/portainer/main.go" afterPath="$PROJECT_DIR$/api/cmd/portainer/main.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/cron/endpoint_sync.go" afterPath="$PROJECT_DIR$/api/cron/endpoint_sync.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/cron/watcher.go" afterPath="$PROJECT_DIR$/api/cron/watcher.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/crypto/crypto.go" afterPath="$PROJECT_DIR$/api/crypto/crypto.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/file/file.go" afterPath="$PROJECT_DIR$/api/file/file.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/auth.go" afterPath="$PROJECT_DIR$/api/http/handler/auth.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/docker.go" afterPath="$PROJECT_DIR$/api/http/handler/docker.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/dockerhub.go" afterPath="$PROJECT_DIR$/api/http/handler/dockerhub.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/endpoint.go" afterPath="$PROJECT_DIR$/api/http/handler/endpoint.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/file.go" afterPath="$PROJECT_DIR$/api/http/handler/file.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/handler.go" afterPath="$PROJECT_DIR$/api/http/handler/handler.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/registry.go" afterPath="$PROJECT_DIR$/api/http/handler/registry.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/resource_control.go" afterPath="$PROJECT_DIR$/api/http/handler/resource_control.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/settings.go" afterPath="$PROJECT_DIR$/api/http/handler/settings.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/status.go" afterPath="$PROJECT_DIR$/api/http/handler/status.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/team.go" afterPath="$PROJECT_DIR$/api/http/handler/team.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/team_membership.go" afterPath="$PROJECT_DIR$/api/http/handler/team_membership.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/templates.go" afterPath="$PROJECT_DIR$/api/http/handler/templates.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/upload.go" afterPath="$PROJECT_DIR$/api/http/handler/upload.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/user.go" afterPath="$PROJECT_DIR$/api/http/handler/user.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/handler/websocket.go" afterPath="$PROJECT_DIR$/api/http/handler/websocket.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/access_control.go" afterPath="$PROJECT_DIR$/api/http/proxy/access_control.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/containers.go" afterPath="$PROJECT_DIR$/api/http/proxy/containers.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/decorator.go" afterPath="$PROJECT_DIR$/api/http/proxy/decorator.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/factory.go" afterPath="$PROJECT_DIR$/api/http/proxy/factory.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/filter.go" afterPath="$PROJECT_DIR$/api/http/proxy/filter.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/manager.go" afterPath="$PROJECT_DIR$/api/http/proxy/manager.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/response.go" afterPath="$PROJECT_DIR$/api/http/proxy/response.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/service.go" afterPath="$PROJECT_DIR$/api/http/proxy/service.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/socket.go" afterPath="$PROJECT_DIR$/api/http/proxy/socket.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/transport.go" afterPath="$PROJECT_DIR$/api/http/proxy/transport.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/utils.go" afterPath="$PROJECT_DIR$/api/http/proxy/utils.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/proxy/volumes.go" afterPath="$PROJECT_DIR$/api/http/proxy/volumes.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/security/authorization.go" afterPath="$PROJECT_DIR$/api/http/security/authorization.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/security/bouncer.go" afterPath="$PROJECT_DIR$/api/http/security/bouncer.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/security/context.go" afterPath="$PROJECT_DIR$/api/http/security/context.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/security/filter.go" afterPath="$PROJECT_DIR$/api/http/security/filter.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/http/server.go" afterPath="$PROJECT_DIR$/api/http/server.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/ldap/ldap.go" afterPath="$PROJECT_DIR$/api/ldap/ldap.go" />
-    </list>
+    <list default="true" id="3a39cd31-d370-405e-9763-54e85c935476" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,16 +22,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="migrate_dbversion1.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/bolt/migrate_dbversion1.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="migrate_dbversion2.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/bolt/migrate_dbversion2.go">
           <provider selected="true" editor-type-id="text-editor">
@@ -170,11 +102,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="version_service.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="version_service.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/bolt/version_service.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+            <state relative-caret-position="702">
+              <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+              <folding>
+                <element signature="e#14#102#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="swagger.yaml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/swagger.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2889">
+              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -661,7 +605,7 @@
       <option name="presentableId" value="Default" />
       <updated>1504576696107</updated>
       <workItem from="1504576698293" duration="13523000" />
-      <workItem from="1504752005298" duration="20741000" />
+      <workItem from="1504752005298" duration="21461000" />
     </task>
     <task id="LOCAL-00001" summary="update build.sh">
       <created>1504752118645</created>
@@ -674,10 +618,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34264000" />
+    <option name="totallyTimeSpent" value="34984000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -701,7 +646,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06928407" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290993" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17489271" sideWeight="0.6352357" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17489271" sideWeight="0.6352357" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17489271" sideWeight="0.36476427" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290993" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -742,14 +687,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/http/proxy/filter.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/http/security/filter.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1152,8 +1089,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/bolt/version_service.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        <state relative-caret-position="702">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding>
+            <element signature="e#14#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/swagger.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2889">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding />
         </state>
       </provider>
