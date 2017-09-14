@@ -59,7 +59,10 @@
           </div>
           <!-- !loading box -->
         </div>
-
+        <select class="language-switching" ng-controller="LanguageSwitchingCtrl" ng-model="cur_lang"  ng-change="switching(cur_lang)">
+          <option value="en">English</option>
+          <option value="cn">简体中文</option>
+        </select>
         <!-- Main Content -->
         <div id="view" ui-view="content" ng-if="!applicationState.loading"></div>
 

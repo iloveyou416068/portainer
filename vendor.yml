@@ -48,6 +48,8 @@ css:
 angular:
   regular:
   - bower_components/angular/angular.js
+  - bower_components/angular-translate/angular-translate.js
+  - bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js
   - bower_components/angular-bootstrap/ui-bootstrap-tpls.js
   - bower_components/angular-cookies/angular-cookies.js
   - bower_components/angular-google-analytics/dist/angular-google-analytics.js
@@ -61,6 +63,8 @@ angular:
   - bower_components/ng-file-upload/ng-file-upload.js
   minified:
   - bower_components/angular/angular.min.js
+  - bower_components/angular-translate/angular-translate.min.js
+  - bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js
   - bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js
   - bower_components/angular-cookies/angular-cookies.min.js
   - bower_components/angular-google-analytics/dist/angular-google-analytics.min.js

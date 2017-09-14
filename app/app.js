@@ -66,7 +66,8 @@ var app = angular.module('portainer', [
   'users',
   'userSettings',
   'volume',
-  'volumes']);
+  'volumes',
+  'pascalprecht.translate']);
   app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'localStorageServiceProvider', 'jwtOptionsProvider', 'AnalyticsProvider', '$uibTooltipProvider', '$compileProvider','$translateProvider', function ($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider, jwtOptionsProvider, AnalyticsProvider, $uibTooltipProvider, $compileProvider,$translateProvider) {
     'use strict';
     var environment = '@@ENVIRONMENT';
