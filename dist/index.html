@@ -14,7 +14,7 @@
   <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <script src="js/app.7f644e57.js"></script>
+  <script src="js/app.825fe022.js"></script>
 
   <!-- Fav and touch icons -->
   <link rel="shortcut icon" href="ico/favicon.ico">
@@ -52,7 +52,10 @@
           </div>
           <!-- !loading box -->
         </div>
-
+        <select class="language-switching" ng-controller="LanguageSwitchingCtrl" ng-model="cur_lang"  ng-change="switching(cur_lang)">
+          <option value="en">English</option>
+          <option value="cn">简体中文</option>
+        </select>
         <!-- Main Content -->
         <div id="view" ui-view="content" ng-if="!applicationState.loading"></div>
 
