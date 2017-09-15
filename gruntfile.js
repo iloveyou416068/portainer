@@ -105,6 +105,7 @@ module.exports = function (grunt) {
           {dest: '<%= distdir %>/fonts/',  src: '*.{ttf,woff,woff2,eof,svg}', expand: true, cwd: 'bower_components/font-awesome/fonts/'},
           {dest: '<%= distdir %>/fonts/',  src: '*.{ttf,woff,woff2,eof,svg}', expand: true, cwd: 'bower_components/rdash-ui/dist/fonts/'},
           {dest: '<%= distdir %>/images/', src: '**',                         expand: true, cwd: 'assets/images/'},
+          {dest: '<%= distdir %>/i18n/',   src: '**',                         expand: true, cwd: 'assets/i18n/'},
           {dest: '<%= distdir %>/ico',     src: '**',                         expand: true, cwd: 'assets/ico'}
         ]
       }
