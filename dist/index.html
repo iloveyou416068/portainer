@@ -14,7 +14,7 @@
   <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <script src="js/app.825fe022.js"></script>
+  <script src="js/app.f42d919b.js"></script>
 
   <!-- Fav and touch icons -->
   <link rel="shortcut icon" href="ico/favicon.ico">
@@ -44,7 +44,8 @@
               <!-- !loading box logo -->
               <!-- panel -->
               <div class="row" style="text-align: center">
-                Connecting to the Docker endpoint...
+                <!--Connecting to the Docker endpoint...-->
+                连接Docker....
                 <i class="fa fa-cog fa-spin" style="margin-left: 5px"></i>
               </div>
               <!-- !panel -->
@@ -52,10 +53,10 @@
           </div>
           <!-- !loading box -->
         </div>
-        <select class="language-switching" ng-controller="LanguageSwitchingCtrl" ng-model="cur_lang"  ng-change="switching(cur_lang)">
+      <!--  <select class="language-switching" ng-controller="LanguageSwitchingCtrl" ng-model="cur_lang"  ng-change="switching(cur_lang)">
           <option value="en">English</option>
           <option value="cn">简体中文</option>
-        </select>
+        </select>-->
         <!-- Main Content -->
         <div id="view" ui-view="content" ng-if="!applicationState.loading"></div>
 

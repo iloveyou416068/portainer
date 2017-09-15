@@ -2,7 +2,7 @@ angular.module('auth', [])
 .controller('AuthenticationController', ['$scope', 'languageSwitch','$state', '$stateParams', '$window', '$timeout', '$sanitize', 'Authentication', 'Users', 'UserService', 'EndpointService', 'StateManager', 'EndpointProvider', 'Notifications', 'SettingsService',
 function ($scope, languageSwitch,$state, $stateParams, $window, $timeout, $sanitize, Authentication, Users, UserService, EndpointService, StateManager, EndpointProvider, Notifications, SettingsService) {
 
-  $scope.login_title=languageSwitch.languageSwitch(100001);
+/*  $scope.login_title=languageSwitch.languageSwitch(100001);*/
 
   $scope.logo = StateManager.getState().application.logo;
 

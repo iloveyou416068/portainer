@@ -78,12 +78,12 @@ var app = angular.module('portainer', [
     localStorageServiceProvider
     .setPrefix('portainer');
 
-    var lang = window.localStorage.lang||'cn';
+/*    var lang = window.localStorage.lang||'cn';
       $translateProvider.preferredLanguage(lang);
       $translateProvider.useStaticFilesLoader({
           prefix: '/i18n/',
           suffix: '.json'
-      });
+      });*/
 
     jwtOptionsProvider.config({
       tokenGetter: ['LocalStorage', function(LocalStorage) {
