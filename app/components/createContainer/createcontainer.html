@@ -1,7 +1,7 @@
 <rd-header>
-  <rd-header-title title="Create container"></rd-header-title>
+  <rd-header-title title="创建容器"></rd-header-title>
   <rd-header-content>
-    <a ui-sref="containers">Containers</a> &gt; Add container
+    <a ui-sref="containers">容器</a> &gt; 添加容器
   </rd-header-content>
 </rd-header>
 
@@ -12,7 +12,7 @@
         <form class="form-horizontal">
           <!-- name-input -->
           <div class="form-group">
-            <label for="container_name" class="col-sm-1 control-label text-left">Name</label>
+            <label for="container_name" class="col-sm-1 control-label text-left">名称</label>
             <div class="col-sm-11">
               <input type="text" class="form-control" ng-model="config.name" id="container_name" placeholder="e.g. myContainer">
             </div>
@@ -30,8 +30,8 @@
           <div class="form-group">
             <div class="col-sm-12">
               <label for="ownership" class="control-label text-left">
-                Always pull the image
-                <portainer-tooltip position="bottom" message="When enabled, Portainer will automatically try to pull the specified image before creating the container."></portainer-tooltip>
+                总是拉取镜像
+                <portainer-tooltip position="bottom" message="当启用, Portainer在创建容器前会自动尝试拉去镜像."></portainer-tooltip>
               </label>
               <label class="switch" style="margin-left: 20px;">
                 <input type="checkbox" ng-model="formValues.alwaysPull"><i></i>
@@ -46,8 +46,8 @@
           <div class="form-group">
             <div class="col-sm-12">
               <label class="control-label text-left">
-                Publish all exposed ports
-                <portainer-tooltip position="bottom" message="When enabled, Portainer will let Docker automatically map a random port on the host to each one defined in the image Dockerfile."></portainer-tooltip>
+                发布所有已公开的端口
+                <portainer-tooltip position="bottom" message="当启用, Portainer会自动映射一个随机端口在主机上给镜像在Dockerfile中定义了的."></portainer-tooltip>
               </label>
               <label class="switch" style="margin-left: 20px;">
                 <input type="checkbox" ng-model="config.HostConfig.PublishAllPorts"><i></i>
@@ -58,9 +58,9 @@
           <!-- port-mapping -->
           <div class="form-group">
             <div class="col-sm-12">
-              <label class="control-label text-left">Port mapping</label>
+              <label class="control-label text-left">Port 映射</label>
               <span class="label label-default interactive" style="margin-left: 10px;" ng-click="addPortBinding()">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i> map additional port
+                <i class="fa fa-plus-circle" aria-hidden="true"></i> 映射附加端口
               </span>
             </div>
             <!-- port-mapping-input-list -->
@@ -68,7 +68,7 @@
               <div ng-repeat="portBinding in config.HostConfig.PortBindings" style="margin-top: 2px;">
                 <!-- host-port -->
                 <div class="input-group col-sm-4 input-group-sm">
-                  <span class="input-group-addon">host</span>
+                  <span class="input-group-addon">主机</span>
                   <input type="text" class="form-control" ng-model="portBinding.hostPort" placeholder="e.g. 80 or 1.2.3.4:80 (optional)">
                 </div>
                 <!-- !host-port -->
@@ -77,7 +77,7 @@
                 </span>
                 <!-- container-port -->
                 <div class="input-group col-sm-4 input-group-sm">
-                  <span class="input-group-addon">container</span>
+                  <span class="input-group-addon">端口</span>
                   <input type="text" class="form-control" ng-model="portBinding.containerPort" placeholder="e.g. 80">
                 </div>
                 <!-- !container-port -->
@@ -106,13 +106,13 @@
           </div>
           <div class="form-group">
             <div class="col-sm-12">
-              <button type="button" class="btn btn-primary btn-sm" ng-disabled="!config.Image" ng-click="create()">Start container</button>
-              <a type="button" class="btn btn-default btn-sm" ui-sref="containers">Cancel</a>
+              <button type="button" class="btn btn-primary btn-sm" ng-disabled="!config.Image" ng-click="create()">启动容器</button>
+              <a type="button" class="btn btn-default btn-sm" ui-sref="containers">取消</a>
               <i id="createContainerSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px; display: none;"></i>
               <span class="text-danger" ng-if="state.formValidationError" style="margin-left: 5px;">{{ state.formValidationError }}</span>
               <span ng-if="fromContainerMultipleNetworks" style="margin-left: 10px">
                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                <span class="small text-muted" style="margin-left: 5px;">This container is connected to multiple networks, only one network will be kept at creation time.</span>
+                <span class="small text-muted" style="margin-left: 5px;">这个容器连接到多个网络，只有一个网络将在创建时保持。.</span>
               </span>
             </div>
           </div>
@@ -126,7 +126,7 @@
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-cog" title="Advanced container settings"></rd-widget-header>
+      <rd-widget-header icon="fa-cog" title="高级设置"></rd-widget-header>
       <rd-widget-body>
         <ul class="nav nav-pills nav-justified">
           <li class="active interactive"><a data-target="#command" data-toggle="tab">Command</a></li>

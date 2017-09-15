@@ -1,27 +1,27 @@
 <rd-header>
-  <rd-header-title title="Container details">
+  <rd-header-title title="容器详述">
     <i id="loadingViewSpinner" class="fa fa-cog fa-spin"></i>
   </rd-header-title>
   <rd-header-content>
-    <a ui-sref="containers">Containers</a> &gt; <a ui-sref="container({id: container.Id})">{{ container.Name|trimcontainername }}</a>
+    <a ui-sref="containers">容器</a> &gt; <a ui-sref="container({id: container.Id})">{{ container.Name|trimcontainername }}</a>
   </rd-header-content>
 </rd-header>
 
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-cogs" title="Actions"></rd-widget-header>
+      <rd-widget-header icon="fa-cogs" title="操作"></rd-widget-header>
       <rd-widget-body classes="padding">
         <div class="btn-group" role="group" aria-label="...">
           <button class="btn btn-success" ng-click="start()" ng-disabled="container.State.Running"><i class="fa fa-play space-right" aria-hidden="true"></i>启动</button>
           <button class="btn btn-danger" ng-click="stop()" ng-disabled="!container.State.Running"><i class="fa fa-stop space-right" aria-hidden="true"></i>停止</button>
-          <button class="btn btn-danger" ng-click="kill()" ng-disabled="!container.State.Running"><i class="fa fa-bomb space-right" aria-hidden="true"></i>Kill</button>
-          <button class="btn btn-primary" ng-click="restart()" ng-disabled="!container.State.Running"><i class="fa fa-refresh space-right" aria-hidden="true"></i>Restart</button>
-          <button class="btn btn-primary" ng-click="pause()" ng-disabled="!container.State.Running || container.State.Paused"><i class="fa fa-pause space-right" aria-hidden="true"></i>Pause</button>
-          <button class="btn btn-primary" ng-click="unpause()" ng-disabled="!container.State.Paused"><i class="fa fa-play space-right" aria-hidden="true"></i>Resume</button>
-          <button class="btn btn-danger" ng-click="confirmRemove()"><i class="fa fa-trash space-right" aria-hidden="true"></i>Remove</button>
-          <button class="btn btn-danger" ng-click="recreate()" ng-if="!container.Config.Labels['com.docker.swarm.service.id']"><i class="fa fa-refresh space-right" aria-hidden="true"></i>Recreate</button>
-          <button class="btn btn-primary" ng-click="duplicate()" ng-if="!container.Config.Labels['com.docker.swarm.service.id']"><i class="fa fa-files-o space-right" aria-hidden="true"></i>Duplicate/Edit</button>
+          <button class="btn btn-danger" ng-click="kill()" ng-disabled="!container.State.Running"><i class="fa fa-bomb space-right" aria-hidden="true"></i>杀掉</button>
+          <button class="btn btn-primary" ng-click="restart()" ng-disabled="!container.State.Running"><i class="fa fa-refresh space-right" aria-hidden="true"></i>重启</button>
+          <button class="btn btn-primary" ng-click="pause()" ng-disabled="!container.State.Running || container.State.Paused"><i class="fa fa-pause space-right" aria-hidden="true"></i>暂停</button>
+          <button class="btn btn-primary" ng-click="unpause()" ng-disabled="!container.State.Paused"><i class="fa fa-play space-right" aria-hidden="true"></i>恢复</button>
+          <button class="btn btn-danger" ng-click="confirmRemove()"><i class="fa fa-trash space-right" aria-hidden="true"></i>删除</button>
+          <button class="btn btn-danger" ng-click="recreate()" ng-if="!container.Config.Labels['com.docker.swarm.service.id']"><i class="fa fa-refresh space-right" aria-hidden="true"></i>重新创建</button>
+          <button class="btn btn-primary" ng-click="duplicate()" ng-if="!container.Config.Labels['com.docker.swarm.service.id']"><i class="fa fa-files-o space-right" aria-hidden="true"></i>复制/编辑</button>
         </div>
       </rd-widget-body>
     </rd-widget>
@@ -31,7 +31,7 @@
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-server" title="Container status"></rd-widget-header>
+      <rd-widget-header icon="fa-server" title="容器状态"></rd-widget-header>
       <rd-widget-body classes="no-padding">
         <table class="table">
           <tbody>
@@ -40,7 +40,7 @@
               <td>{{ container.Id }}</td>
             </tr>
             <tr>
-              <td>Name</td>
+              <td>容器名</td>
               <td ng-if="!container.edit">
                 {{ container.Name|trimcontainername }}
                 <a href="" data-toggle="tooltip" title="Edit container name" ng-click="container.edit = true;"><i class="fa fa-edit"></i></a>
@@ -54,11 +54,11 @@
               </td>
             </tr>
             <tr ng-if="container.NetworkSettings.IPAddress">
-              <td>IP address</td>
+              <td>IP地址</td>
               <td>{{ container.NetworkSettings.IPAddress }}</td>
             </tr>
             <tr>
-              <td>Status</td>
+              <td>状态</td>
               <td>
                 <i class="fa fa-heartbeat space-right green-icon" ng-if="container.State.Running"></i>
                 <i class="fa fa-heartbeat space-right red-icon" ng-if="!container.State.Running && container.State.Status !== 'created'"></i>
@@ -66,23 +66,23 @@
               </td>
             </tr>
             <tr>
-              <td>Created</td>
+              <td>创建时间</td>
               <td>{{ container.Created|getisodate }}</td>
             </tr>
             <tr ng-if="container.State.Running">
-              <td>Start time</td>
+              <td>启动时间</td>
               <td>{{ container.State.StartedAt|getisodate }}</td>
             </tr>
             <tr ng-if="!container.State.Running && container.State.Status !== 'created'">
-              <td>Finished</td>
+              <td>停止时间</td>
               <td>{{ container.State.FinishedAt|getisodate }}</td>
             </tr>
             <tr>
               <td colspan="2">
                 <div class="btn-group" role="group" aria-label="...">
-                  <a class="btn btn-outline-secondary" type="button" ui-sref="stats({id: container.Id})"><i class="fa fa-area-chart space-right" aria-hidden="true"></i>Stats</a>
-                  <a class="btn btn-outline-secondary" type="button" ui-sref="containerlogs({id: container.Id})"><i class="fa fa-exclamation-circle space-right" aria-hidden="true"></i>Logs</a>
-                  <a class="btn btn-outline-secondary" type="button" ui-sref="console({id: container.Id})"><i class="fa fa-terminal space-right" aria-hidden="true"></i>Console</a>
+                  <a class="btn btn-outline-secondary" type="button" ui-sref="stats({id: container.Id})"><i class="fa fa-area-chart space-right" aria-hidden="true"></i>统计</a>
+                  <a class="btn btn-outline-secondary" type="button" ui-sref="containerlogs({id: container.Id})"><i class="fa fa-exclamation-circle space-right" aria-hidden="true"></i>日志</a>
+                  <a class="btn btn-outline-secondary" type="button" ui-sref="console({id: container.Id})"><i class="fa fa-terminal space-right" aria-hidden="true"></i>控制台</a>
                 </div>
               </td>
             </tr>
@@ -105,23 +105,23 @@
 <div ng-if="container.State.Health" class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-server" title="Container health"></rd-widget-header>
+      <rd-widget-header icon="fa-server" title="容器监控(健康状态)"></rd-widget-header>
       <rd-widget-body classes="no-padding">
         <table class="table">
           <tbody>
             <tr>
-              <td>Status</td>
+              <td>状态</td>
               <td>
                 <i ng-class="{'healthy': 'fa fa-heartbeat space-right green-icon', 'unhealthy': 'fa fa-heartbeat space-right red-icon', 'starting': 'fa fa-heartbeat space-right orange-icon'}[container.State.Health.Status]"></i>
                 {{ container.State.Health.Status }}
               </td>
             </tr>
             <tr>
-              <td>Failure count</td>
+              <td>故障计数</td>
               <td>{{ container.State.Health.FailingStreak }}</td>
             </tr>
             <tr>
-              <td>Last output</td>
+              <td>最后的输出</td>
               <td>{{ container.State.Health.Log[container.State.Health.Log.length - 1].Output }}</td>
             </tr>
           </tbody>
@@ -134,15 +134,14 @@
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-clone" title="Create image"></rd-widget-header>
+      <rd-widget-header icon="fa-clone" title="创建镜像"></rd-widget-header>
       <rd-widget-body>
         <form class="form-horizontal">
           <!-- tag-description -->
           <div class="form-group">
             <div class="col-sm-12">
               <span class="small text-muted">
-                You can create an image from this container, this allows you to backup important data or save
-                helpful configurations. You'll be able to spin up another container based on this image afterward.
+                您可以从这个容器创建一个镜像, 这允许您备份重要数据或保存有用的配置. 您将能够在此基础上旋转另一个容器.
               </span>
             </div>
           </div>
@@ -155,13 +154,13 @@
           <!-- tag-note -->
           <div class="form-group">
             <div class="col-sm-12">
-              <span class="small text-muted">Note: if you don't specify the tag in the image name, <span class="label label-default">latest</span> will be used.</span>
+              <span class="small text-muted">Note: 如果不在镜像名tag中指定标记，则将使用<span class="label label-default">最新的标记latest</span></span>
             </div>
           </div>
           <!-- !tag-note -->
           <div class="form-group">
             <div class="col-sm-12">
-              <button type="button" class="btn btn-primary btn-sm" ng-disabled="!config.Image" ng-click="commit()">Create</button>
+              <button type="button" class="btn btn-primary btn-sm" ng-disabled="!config.Image" ng-click="commit()">创建</button>
               <i id="createImageSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px; display: none;"></i>
             </div>
           </div>
@@ -174,16 +173,16 @@
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-server" title="Container details"></rd-widget-header>
+      <rd-widget-header icon="fa-server" title="容器详述"></rd-widget-header>
       <rd-widget-body classes="no-padding">
         <table class="table">
           <tbody>
             <tr>
-              <td>Image</td>
+              <td>镜像</td>
               <td><a ui-sref="image({id: container.Image})">{{ container.Image }}</a></td>
             </tr>
             <tr ng-if="portBindings.length > 0">
-              <td>Port configuration</td>
+              <td>端口配置</td>
               <td>
                 <div ng-repeat="portMapping in portBindings">
                   {{ portMapping.container }} <i class="fa fa-long-arrow-right"></i> {{ portMapping.host }}
@@ -191,11 +190,11 @@
               </td>
             </tr>
             <tr>
-              <td>CMD</td>
+              <td>命令</td>
               <td><code>{{ container.Config.Cmd|command }}</code></td>
             </tr>
             <tr>
-              <td>ENV</td>
+              <td>环境</td>
               <td>
                 <table class="table table-bordered table-condensed">
                   <tr ng-repeat="var in container.Config.Env track by $index">
@@ -217,15 +216,15 @@
               </td>
             </tr>
             <tr ng-if="container.HostConfig.RestartPolicy.Name !== 'no'">
-              <td>Restart policies</td>
+              <td>重新启动策略</td>
               <td>
                 <table class="table table-bordered table-condensed">
                   <tr>
-                    <td class="col-md-3">Name</td>
+                    <td class="col-md-3">名称</td>
                     <td>{{ container.HostConfig.RestartPolicy.Name }}</td>
                   </tr>
                   <tr>
-                    <td class="col-md-3">MaximumRetryCount</td>
+                    <td class="col-md-3">最大重试次数</td>
                     <td>
                       {{ container.HostConfig.RestartPolicy.MaximumRetryCount }}
                     </td>
@@ -248,8 +247,8 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Host</th>
-              <th>Container</th>
+              <th>主机</th>
+              <th>容器</th>
             </tr>
           </thead>
           <tbody>
@@ -267,11 +266,11 @@
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-sitemap" title="Connected networks">
+      <rd-widget-header icon="fa-sitemap" title="网络连接">
         <div class="pull-right">
           Items per page:
           <select ng-model="state.pagination_count" ng-change="changePaginationCount()">
-            <option value="0">All</option>
+            <option value="0">所有</option>
             <option value="10">10</option>
             <option value="25">25</option>
             <option value="50">50</option>
@@ -282,11 +281,11 @@
       <rd-widget-body classes="no-padding">
         <table class="table">
           <thead>
-            <th>Network Name</th>
-            <th>IP Address</th>
-            <th>Gateway</th>
-            <th>MacAddress</th>
-            <th>Actions</th>
+            <th>网络名称</th>
+            <th>IP地址</th>
+            <th>网关</th>
+            <th>MAC地址</th>
+            <th>操作</th>
           </thead>
           <tbody>
             <tr dir-paginate="(key, value) in container.NetworkSettings.Networks | itemsPerPage: state.pagination_count">
@@ -295,11 +294,11 @@
               <td>{{ value.Gateway || '-' }}</td>
               <td>{{ value.MacAddress || '-' }}</td>
               <td>
-                <button type="button" class="btn btn-xs btn-danger" ng-click="containerLeaveNetwork(container, value.NetworkID)"><i class="fa fa-trash space-right" aria-hidden="true"></i>Leave Network</button>
+                <button type="button" class="btn btn-xs btn-danger" ng-click="containerLeaveNetwork(container, value.NetworkID)"><i class="fa fa-trash space-right" aria-hidden="true"></i>离开网络</button>
               </td>
             </tr>
             <tr ng-if="(container.NetworkSettings.Networks | emptyobject)">
-              <td colspan="5" class="text-center text-muted">No networks connected.</td>
+              <td colspan="5" class="text-center text-muted">没有网络连接.</td>
             </tr>
           </tbody>
         </table>
@@ -310,15 +309,15 @@
         <form class="form-horizontal">
           <!-- network-input -->
           <div class="row">
-            <label for="container_network" class="col-sm-3 col-lg-2 control-label text-left">Join a Network</label>
+            <label for="container_network" class="col-sm-3 col-lg-2 control-label text-left">加入一个网络</label>
             <div class="col-sm-5 col-lg-4">
               <select class="form-control" ng-model="selectedNetwork" id="container_network">
-                <option selected disabled hidden value="">Select a network</option>
+                <option selected disabled hidden value="">选择一个网络</option>
                 <option ng-repeat="net in availableNetworks" ng-value="net.Id">{{ net.Name }}</option>
               </select>
             </div>
             <div class="col-sm-1">
-              <button type="button" class="btn btn-primary btn-sm" ng-disabled="!selectedNetwork" ng-click="containerJoinNetwork(container, selectedNetwork)">Join Network</button>
+              <button type="button" class="btn btn-primary btn-sm" ng-disabled="!selectedNetwork" ng-click="containerJoinNetwork(container, selectedNetwork)">加入网络</button>
             </div>
           </div>
         </form>

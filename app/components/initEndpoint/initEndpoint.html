@@ -17,7 +17,7 @@
             <div class="form-group">
               <div class="col-sm-12">
                 <span class="small text-muted">
-                  Connect Portainer to the Docker environment you want to manage.
+                  将Portainer连接到要管理的Docker环境
                 </span>
               </div>
             </div>
@@ -30,9 +30,9 @@
                   <label for="local_endpoint">
                     <div class="boxselector_header">
                       <i class="fa fa-bolt" aria-hidden="true" style="margin-right: 2px;"></i>
-                      Local
+                      本地
                     </div>
-                    <p>Manage the Docker environment where Portainer is running</p>
+                    <p>管理Portainer运行的Docker环境</p>
                   </label>
                 </div>
                 <div>
@@ -40,9 +40,9 @@
                   <label for="remote_endpoint">
                     <div class="boxselector_header">
                       <i class="fa fa-plug" aria-hidden="true" style="margin-right: 2px;"></i>
-                      Remote
+                      远程
                     </div>
-                    <p>Manage a remote Docker environment</p>
+                    <p>管理远程Docker环境</p>
                   </label>
                 </div>
               </div>
@@ -55,10 +55,10 @@
                   <span class="small">
                     <p class="text-muted">
                       <i class="fa fa-exclamation-triangle orange-icon" aria-hidden="true" style="margin-right: 2px;"></i>
-                      This feature is not yet available for <u>native Docker Windows containers</u>.
+                      此功能尚不可用 <u>本机Docker Windows容器</u>.
                     </p>
                     <p class="text-primary">
-                      Please ensure that you have started the Portainer container with the following Docker flag <code>-v "/var/run/docker.sock:/var/run/docker.sock"</code> in order to connect to the local Docker environment.
+                      请确保您已经启动了具有以下Docker标志的Portainer容器 <code>-v "/var/run/docker.sock:/var/run/docker.sock"</code> 以便连接到本地的Docker环境.
                     </p>
                   </span>
                 </div>
@@ -66,7 +66,7 @@
               <!-- actions -->
               <div class="form-group">
                 <div class="col-sm-12">
-                  <button type="submit" class="btn btn-primary btn-sm" ng-click="createLocalEndpoint()"><i class="fa fa-bolt" aria-hidden="true"></i> Connect</button>
+                  <button type="submit" class="btn btn-primary btn-sm" ng-click="createLocalEndpoint()"><i class="fa fa-bolt" aria-hidden="true"></i> 连接</button>
                   <i id="createResourceSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px; display: none;"></i>
                 </div>
               </div>
@@ -77,7 +77,7 @@
             <div ng-if="formValues.EndpointType === 'remote'">
               <!-- name-input -->
               <div class="form-group">
-                <label for="endpoint_name" class="col-sm-4 col-lg-3 control-label text-left">Name</label>
+                <label for="endpoint_name" class="col-sm-4 col-lg-3 control-label text-left">名称</label>
                 <div class="col-sm-8 col-lg-9">
                   <input type="text" class="form-control" id="endpoint_name" ng-model="formValues.Name" placeholder="e.g. docker-prod01">
                 </div>
@@ -86,8 +86,8 @@
               <!-- endpoint-url-input -->
               <div class="form-group">
                 <label for="endpoint_url" class="col-sm-4 col-lg-3 control-label text-left">
-                  Endpoint URL
-                  <portainer-tooltip position="bottom" message="URL or IP address of a Docker host. The Docker API must be exposed over a TCP port. Please refer to the Docker documentation to configure it."></portainer-tooltip>
+                    端点网址URL
+                  <portainer-tooltip position="bottom" message="Docker主机的URL或IP地址. Docker API必须通过TCP端口进行暴露. 请参考Docker文档进行配置."></portainer-tooltip>
                 </label>
                 <div class="col-sm-8 col-lg-9">
                   <input type="text" class="form-control" id="endpoint_url" ng-model="formValues.URL" placeholder="e.g. 10.0.0.10:2375 or mydocker.mydomain.com:2375">
@@ -99,7 +99,7 @@
                 <div class="col-sm-12">
                   <label for="tls" class="control-label text-left">
                     TLS
-                    <portainer-tooltip position="bottom" message="Enable this option if you need to specify TLS certificates to connect to the Docker endpoint."></portainer-tooltip>
+                    <portainer-tooltip position="bottom" message="如果需要指定连接到Docker端点的TLS证书，请启用此选项."></portainer-tooltip>
                   </label>
                   <label class="switch" style="margin-left: 20px;">
                     <input type="checkbox" ng-model="formValues.TLS"><i></i>
@@ -111,9 +111,9 @@
               <div ng-if="formValues.TLS">
                 <!-- ca-input -->
                 <div class="form-group">
-                  <label class="col-sm-3 control-label text-left">TLS CA certificate</label>
+                  <label class="col-sm-3 control-label text-left">TLS CA 证书</label>
                   <div class="col-sm-9">
-                    <button class="btn btn-sm btn-primary" ngf-select ng-model="formValues.TLSCACert">Select file</button>
+                    <button class="btn btn-sm btn-primary" ngf-select ng-model="formValues.TLSCACert">选择文件</button>
                     <span style="margin-left: 5px;">
                       {{ formValues.TLSCACert.name }}
                       <i class="fa fa-times red-icon" ng-if="!formValues.TLSCACert" aria-hidden="true"></i>
@@ -124,9 +124,9 @@
                 <!-- !ca-input -->
                 <!-- cert-input -->
                 <div class="form-group">
-                  <label for="tls_cert" class="col-sm-3 control-label text-left">TLS certificate</label>
+                  <label for="tls_cert" class="col-sm-3 control-label text-left">TLS 证书</label>
                   <div class="col-sm-9">
-                    <button class="btn btn-sm btn-primary" ngf-select ng-model="formValues.TLSCert">Select file</button>
+                    <button class="btn btn-sm btn-primary" ngf-select ng-model="formValues.TLSCert">选择文件</button>
                     <span style="margin-left: 5px;">
                       {{ formValues.TLSCert.name }}
                       <i class="fa fa-times red-icon" ng-if="!formValues.TLSCert" aria-hidden="true"></i>
@@ -139,7 +139,7 @@
                 <div class="form-group">
                   <label class="col-sm-3 control-label text-left">TLS key</label>
                   <div class="col-sm-9">
-                    <button class="btn btn-sm btn-primary" ngf-select ng-model="formValues.TLSKey">Select file</button>
+                    <button class="btn btn-sm btn-primary" ngf-select ng-model="formValues.TLSKey">选择文件</button>
                     <span style="margin-left: 5px;">
                       {{ formValues.TLSKey.name }}
                       <i class="fa fa-times red-icon" ng-if="!formValues.TLSKey" aria-hidden="true"></i>
@@ -153,7 +153,7 @@
               <!-- actions -->
               <div class="form-group">
                 <div class="col-sm-12">
-                  <button type="submit" class="btn btn-primary btn-sm" ng-disabled="!formValues.Name || !formValues.URL || (formValues.TLS && (!formValues.TLSCACert || !formValues.TLSCert || !formValues.TLSKey))" ng-click="createRemoteEndpoint()"><i class="fa fa-plug" aria-hidden="true"></i> Connect</button>
+                  <button type="submit" class="btn btn-primary btn-sm" ng-disabled="!formValues.Name || !formValues.URL || (formValues.TLS && (!formValues.TLSCACert || !formValues.TLSCert || !formValues.TLSKey))" ng-click="createRemoteEndpoint()"><i class="fa fa-plug" aria-hidden="true"></i> 连接</button>
                   <i id="createResourceSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px; display: none;"></i>
                 </div>
               </div>
