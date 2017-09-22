@@ -1,14 +1,14 @@
 <div ng-if="service.ServiceConstraints" id="service-placement-constraints">
   <rd-widget>
-    <rd-widget-header icon="fa-tasks" title="Placement constraints">
+    <rd-widget-header icon="fa-tasks" title="布局设置约束">
       <div class="nopadding">
         <a class="btn btn-default btn-sm pull-right" ng-click="isUpdating || addPlacementConstraint(service)" ng-disabled="isUpdating">
-          <i class="fa fa-plus-circle" aria-hidden="true"></i> placement constraint
+          <i class="fa fa-plus-circle" aria-hidden="true"></i> 布局设置约束
         </a>
       </div>
     </rd-widget-header>
     <rd-widget-body ng-if="service.ServiceConstraints.length === 0">
-      <p>There are no placement constraints for this service.</p>
+      <p>此服务没有布局位置约束限制.</p>
     </rd-widget-body>
     <rd-widget-body ng-if="service.ServiceConstraints.length > 0" classes="no-padding">
       <table class="table" >
@@ -51,13 +51,13 @@
     <rd-widget-footer>
       <div class="btn-toolbar" role="toolbar">
         <div class="btn-group" role="group">
-          <button type="button" class="btn btn-primary btn-sm" ng-disabled="!hasChanges(service, ['ServiceConstraints'])" ng-click="updateService(service)">Apply changes</button>
+          <button type="button" class="btn btn-primary btn-sm" ng-disabled="!hasChanges(service, ['ServiceConstraints'])" ng-click="updateService(service)">应用变更</button>
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li><a ng-click="cancelChanges(service, ['ServiceConstraints'])">Reset changes</a></li>
-            <li><a ng-click="cancelChanges(service)">Reset all changes</a></li>
+            <li><a ng-click="cancelChanges(service, ['ServiceConstraints'])">重置变化</a></li>
+            <li><a ng-click="cancelChanges(service)">重置所有变化</a></li>
           </ul>
         </div>
       </div>

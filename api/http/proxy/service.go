@@ -3,7 +3,7 @@ package proxy
 import (
 	"net/http"
 
-	"github.com/portainer/portainer"
+	"portainer"
 )
 
 const (

@@ -1,8 +1,8 @@
 package bolt
 
 import (
-	"github.com/portainer/portainer"
-	"github.com/portainer/portainer/bolt/internal"
+	"portainer"
+	"portainer/bolt/internal"
 
 	"github.com/boltdb/bolt"
 )

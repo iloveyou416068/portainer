@@ -9,68 +9,68 @@
       </a>
     </li>
     <li class="sidebar-title">
-      <span>Active endpoint</span>
+      <span>活动的docker连接端</span>
     </li>
     <li class="sidebar-title">
       <select class="select-endpoint form-control" ng-options="endpoint.Name for endpoint in endpoints" ng-model="activeEndpoint" ng-change="switchEndpoint(activeEndpoint)">
       </select>
     </li>
-    <li class="sidebar-title"><span>Endpoint actions</span></li>
+    <li class="sidebar-title"><span>管理</span></li>
     <li class="sidebar-list">
-      <a ui-sref="dashboard" ui-sref-active="active">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
+      <a ui-sref="dashboard" ui-sref-active="active">总览 <span class="menu-icon fa fa-tachometer"></span></a>
     </li>
     <li class="sidebar-list">
-      <a ui-sref="templates" ui-sref-active="active">App Templates <span class="menu-icon fa fa-rocket"></span></a>
+      <a ui-sref="templates" ui-sref-active="active">应用模版 <span class="menu-icon fa fa-rocket"></span></a>
       <div class="sidebar-sublist" ng-if="toggle && displayExternalContributors && ($state.current.name === 'templates' || $state.current.name === 'templates_linuxserver')">
         <a ui-sref="templates_linuxserver" ui-sref-active="active">LinuxServer.io</a>
       </div>
     </li>
     <li class="sidebar-list" ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM_MODE' && applicationState.endpoint.mode.role === 'MANAGER'">
-      <a ui-sref="services" ui-sref-active="active">Services <span class="menu-icon fa fa-list-alt"></span></a>
+      <a ui-sref="services" ui-sref-active="active">服务 <span class="menu-icon fa fa-list-alt"></span></a>
     </li>
     <li class="sidebar-list">
-      <a ui-sref="containers" ui-sref-active="active">Containers <span class="menu-icon fa fa-server"></span></a>
+      <a ui-sref="containers" ui-sref-active="active">容器 <span class="menu-icon fa fa-server"></span></a>
     </li>
     <li class="sidebar-list">
-      <a ui-sref="images" ui-sref-active="active">Images <span class="menu-icon fa fa-clone"></span></a>
+      <a ui-sref="images" ui-sref-active="active">镜像 <span class="menu-icon fa fa-clone"></span></a>
     </li>
     <li class="sidebar-list">
-      <a ui-sref="networks" ui-sref-active="active">Networks <span class="menu-icon fa fa-sitemap"></span></a>
+      <a ui-sref="networks" ui-sref-active="active">网络 <span class="menu-icon fa fa-sitemap"></span></a>
     </li>
     <li class="sidebar-list">
-      <a ui-sref="volumes" ui-sref-active="active">Volumes <span class="menu-icon fa fa-cubes"></span></a>
+      <a ui-sref="volumes" ui-sref-active="active">Volumes持久化卷 <span class="menu-icon fa fa-cubes"></span></a>
     </li>
     <li class="sidebar-list" ng-if="applicationState.endpoint.apiVersion >= 1.25 && applicationState.endpoint.mode.provider === 'DOCKER_SWARM_MODE' && applicationState.endpoint.mode.role === 'MANAGER'">
-      <a ui-sref="secrets" ui-sref-active="active">Secrets <span class="menu-icon fa fa-user-secret"></span></a>
+      <a ui-sref="secrets" ui-sref-active="active">安全 <span class="menu-icon fa fa-user-secret"></span></a>
     </li>
     <li class="sidebar-list" ng-if="applicationState.endpoint.mode.provider === 'DOCKER_STANDALONE' || applicationState.endpoint.mode.provider === 'VMWARE_VIC'">
-      <a ui-sref="events" ui-sref-active="active">Events <span class="menu-icon fa fa-history"></span></a>
+      <a ui-sref="events" ui-sref-active="active">Events事件 <span class="menu-icon fa fa-history"></span></a>
     </li>
     <li class="sidebar-list" ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM' || (applicationState.endpoint.mode.provider === 'DOCKER_SWARM_MODE' && applicationState.endpoint.mode.role === 'MANAGER')">
-      <a ui-sref="swarm" ui-sref-active="active">Swarm <span class="menu-icon fa fa-object-group"></span></a>
+      <a ui-sref="swarm" ui-sref-active="active">Swarm集群 <span class="menu-icon fa fa-object-group"></span></a>
     </li>
     <li class="sidebar-list" ng-if="applicationState.endpoint.mode.provider === 'DOCKER_STANDALONE' || applicationState.endpoint.mode.provider === 'VMWARE_VIC'">
       <a ui-sref="docker" ui-sref-active="active">Docker <span class="menu-icon fa fa-th"></span></a>
     </li>
     <li class="sidebar-title" ng-if="!applicationState.application.authentication || isAdmin || isTeamLeader">
-      <span>Portainer settings</span>
+      <span>Portainer 设置</span>
     </li>
     <li class="sidebar-list" ng-if="applicationState.application.authentication && (isAdmin || isTeamLeader)">
-      <a ui-sref="users" ui-sref-active="active">User management <span class="menu-icon fa fa-users"></span></a>
+      <a ui-sref="users" ui-sref-active="active">用户管理 <span class="menu-icon fa fa-users"></span></a>
       <div class="sidebar-sublist" ng-if="toggle && ($state.current.name === 'users' || $state.current.name === 'user' || $state.current.name === 'teams' || $state.current.name === 'team')">
         <a ui-sref="teams" ui-sref-active="active">Teams</a>
       </div>
     </li>
     <li class="sidebar-list" ng-if="!applicationState.application.authentication || isAdmin">
-      <a ui-sref="endpoints" ui-sref-active="active">Endpoints <span class="menu-icon fa fa-plug"></span></a>
+      <a ui-sref="endpoints" ui-sref-active="active">docker连接 <span class="menu-icon fa fa-plug"></span></a>
     </li>
     <li class="sidebar-list" ng-if="!applicationState.application.authentication || isAdmin">
-      <a ui-sref="registries" ui-sref-active="active">Registries <span class="menu-icon fa fa-database"></span></a>
+      <a ui-sref="registries" ui-sref-active="active">仓库 <span class="menu-icon fa fa-database"></span></a>
     </li>
     <li class="sidebar-list" ng-if="!applicationState.application.authentication || isAdmin">
-      <a ui-sref="settings" ui-sref-active="active">Settings <span class="menu-icon fa fa-cogs"></span></a>
+      <a ui-sref="settings" ui-sref-active="active">设置 <span class="menu-icon fa fa-cogs"></span></a>
       <div class="sidebar-sublist" ng-if="toggle && ($state.current.name === 'settings' || $state.current.name === 'settings_authentication') && applicationState.application.authentication && isAdmin">
-        <a ui-sref="settings_authentication" ui-sref-active="active">Authentication</a>
+        <a ui-sref="settings_authentication" ui-sref-active="active">权限</a>
       </div>
     </li>
   </ul>

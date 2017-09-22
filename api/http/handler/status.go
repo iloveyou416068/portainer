@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"github.com/portainer/portainer"
-	"github.com/portainer/portainer/http/security"
+	"portainer"
+	"portainer/http/security"
 
 	"log"
 	"net/http"

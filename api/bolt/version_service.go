@@ -3,7 +3,7 @@ package bolt
 import (
 	"strconv"
 
-	"github.com/portainer/portainer"
+	"portainer"
 
 	"github.com/boltdb/bolt"
 )

@@ -1,12 +1,12 @@
 <div id="service-restart-policy">
   <rd-widget>
-    <rd-widget-header icon="fa-list-alt" title="Restart policy">
+    <rd-widget-header icon="fa-list-alt" title="重启策略">
     </rd-widget-header>
     <rd-widget-body classes="no-padding">
       <table class="table">
         <tbody>
           <tr>
-            <td>Restart condition</td>
+            <td>重启条件</td>
             <td>
               <div class="input-group input-group-sm">
                 <select class="selectpicker form-control" ng-model="service.RestartCondition" ng-change="updateServiceAttribute(service, 'RestartCondition')" ng-disabled="isUpdating">
@@ -18,7 +18,7 @@
             </td>
             <td>
               <p class="small text-muted" style="margin-top: 10px;">
-                Condition for restart.
+                重新启动的条件。
               </p>
             </td>
           </tr>
@@ -29,7 +29,7 @@
             </td>
             <td>
               <p class="small text-muted" style="margin-top: 10px;">
-                Delay between restart attempts. Time in seconds.
+                重新启动尝试之间的延迟。时间单位秒
               </p>
             </td>
           </tr>
@@ -40,7 +40,7 @@
             </td>
             <td>
               <p class="small text-muted" style="margin-top: 10px;">
-                Maximum attempts to restart a given container before giving up (default value is 0, which is ignored).
+                放弃之前重新启动给定容器的最大尝试(默认值是0，是被忽略的)
               </p>
             </td>
           </tr>
@@ -51,7 +51,7 @@
             </td>
             <td>
               <p class="small text-muted" style="margin-top: 10px;">
-                The time window used to evaluate the restart policy (default value is 0, which is unbounded).
+                评估重启策略(默认值0，无限制的)
               </p>
             </td>
           </tr>

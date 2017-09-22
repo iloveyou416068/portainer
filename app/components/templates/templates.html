@@ -1,11 +1,11 @@
 <rd-header id="view-top">
-  <rd-header-title title="Application templates list">
+  <rd-header-title title="应用程序模板列表">
     <a data-toggle="tooltip" title="Refresh" ui-sref="templates" ui-sref-opts="{reload: true}">
       <i class="fa fa-refresh" aria-hidden="true"></i>
     </a>
     <i id="loadTemplatesSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px;"></i>
   </rd-header-title>
-  <rd-header-content>Templates</rd-header-content>
+  <rd-header-content>模板</rd-header-content>
 </rd-header>
 
 <div class="row" style="height: 90%">
@@ -14,7 +14,7 @@
     <rd-widget>
       <rd-widget-custom-header icon="state.selectedTemplate.Logo" title="state.selectedTemplate.Image">
         <div class="pull-right">
-          <button type="button" class="btn btn-sm btn-primary" ng-click="unselectTemplate()">Hide</button>
+          <button type="button" class="btn btn-sm btn-primary" ng-click="unselectTemplate()">隐藏</button>
         </div>
       </rd-widget-custom-header>
       <rd-widget-body classes="padding">
@@ -33,11 +33,11 @@
           </div>
           <!-- !description -->
           <div class="col-sm-12 form-section-title">
-            Configuration
+            配置
           </div>
           <!-- name-input -->
           <div class="form-group">
-            <label for="container_name" class="col-sm-2 control-label text-left">Name</label>
+            <label for="container_name" class="col-sm-2 control-label text-left">名称</label>
             <div class="col-sm-10">
               <input type="text" name="container_name" class="form-control" ng-model="formValues.name" placeholder="e.g. web (optional)">
             </div>
@@ -45,10 +45,10 @@
           <!-- !name-input -->
           <!-- network-input -->
           <div class="form-group">
-            <label for="container_network" class="col-sm-2 control-label text-left">Network</label>
+            <label for="container_network" class="col-sm-2 control-label text-left">网络</label>
             <div class="col-sm-10">
               <select class="form-control" ng-options="net.Name for net in availableNetworks" ng-model="formValues.network">
-                <option disabled hidden value="">Select a network</option>
+                <option disabled hidden value="">选择一个网络</option>
               </select>
             </div>
           </div>
@@ -58,10 +58,10 @@
             <label for="field_{{ $index }}" class="col-sm-2 control-label text-left">{{ var.label }}</label>
             <div class="col-sm-10">
               <select ng-if="applicationState.endpoint.mode.provider !== 'DOCKER_SWARM' && var.type === 'container'" ng-options="container|containername for container in runningContainers" class="form-control" ng-model="var.value">
-                <option selected disabled hidden value="">Select a container</option>
+                <option selected disabled hidden value="">选择一个容器</option>
               </select>
               <select ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM' && var.type === 'container'" ng-options="container|swarmcontainername for container in runningContainers" class="form-control" ng-model="var.value">
-                <option selected disabled hidden value="">Select a container</option>
+                <option selected disabled hidden value="">选择一个容器</option>
               </select>
               <input ng-if="!var.type || !var.type === 'container'" type="text" class="form-control" ng-model="var.value" id="field_{{ $index }}">
             </div>
@@ -73,10 +73,10 @@
           <div class="form-group">
             <div class="col-sm-12">
               <a class="small interactive" ng-if="!state.showAdvancedOptions" ng-click="state.showAdvancedOptions = true;">
-                <i class="fa fa-plus space-right" aria-hidden="true"></i> Show advanced options
+                <i class="fa fa-plus space-right" aria-hidden="true"></i> 显示高级选项
               </a>
               <a class="small interactive" ng-if="state.showAdvancedOptions" ng-click="state.showAdvancedOptions = false;">
-                <i class="fa fa-minus space-right" aria-hidden="true"></i> Hide advanced options
+                <i class="fa fa-minus space-right" aria-hidden="true"></i> 隐藏高级选项
               </a>
             </div>
           </div>
@@ -84,13 +84,13 @@
             <!-- port-mapping -->
             <div class="form-group" >
               <div class="col-sm-12" style="margin-top: 5px;">
-                <label class="control-label text-left">Port mapping</label>
+                <label class="control-label text-left">端口映射</label>
                 <span class="label label-default interactive" style="margin-left: 10px;" ng-click="addPortBinding()">
-                  <i class="fa fa-plus-circle" aria-hidden="true"></i> map additional port
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i> 附加端口映射
                 </span>
               </div>
               <div class="col-sm-12" style="margin-top: 10px" ng-if="state.selectedTemplate.Ports.length > 0">
-                <span class="small text-muted">Portainer will automatically assign a port if you leave the host port empty.</span>
+                <span class="small text-muted">如果未指定端口，Portainer会自动映射端口</span>
               </div>
               <!-- !port-mapping -->
               <!-- port-mapping-input-list -->
@@ -99,7 +99,7 @@
                   <div ng-repeat="portBinding in state.selectedTemplate.Ports" style="margin-top: 2px;">
                     <!-- host-port -->
                     <div class="input-group col-sm-4 input-group-sm">
-                      <span class="input-group-addon">host</span>
+                      <span class="input-group-addon">主机</span>
                       <input type="text" class="form-control" ng-model="portBinding.hostPort" placeholder="e.g. 80 or 1.2.3.4:80 (optional)">
                     </div>
                     <!-- !host-port -->
@@ -108,7 +108,7 @@
                     </span>
                     <!-- container-port -->
                     <div class="input-group col-sm-4 input-group-sm">
-                      <span class="input-group-addon">container</span>
+                      <span class="input-group-addon">容器</span>
                       <input type="text" class="form-control" ng-model="portBinding.containerPort" placeholder="e.g. 80">
                     </div>
                     <!-- !container-port -->
@@ -131,13 +131,13 @@
             <!-- volume-mapping -->
             <div class="form-group" >
               <div class="col-sm-12" style="margin-top: 5px;">
-                <label class="control-label text-left">Volume mapping</label>
+                <label class="control-label text-left">Volume持久化卷映射</label>
                 <span class="label label-default interactive" style="margin-left: 10px;" ng-click="addVolume()">
-                  <i class="fa fa-plus-circle" aria-hidden="true"></i> map additional volume
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i> 附加卷映射
                 </span>
               </div>
               <div class="col-sm-12" style="margin-top: 10px" ng-if="state.selectedTemplate.Volumes.length > 0">
-                <span class="small text-muted">Portainer will automatically create and map a local volume when using the <b>auto</b> option.</span>
+                <span class="small text-muted">当使用<b>auto</b> 选项时，Portainer会自动创建与本地卷之间的映射.</span>
               </div>
               <div ng-repeat="volume in state.selectedTemplate.Volumes">
                 <div class="col-sm-12" style="margin-top: 10px;">
@@ -145,7 +145,7 @@
                   <div class="col-sm-12 form-inline">
                     <!-- container-path -->
                     <div class="input-group input-group-sm col-sm-6">
-                      <span class="input-group-addon">container</span>
+                      <span class="input-group-addon">容器</span>
                       <input type="text" class="form-control" ng-model="volume.containerPath" placeholder="e.g. /path/in/container">
                     </div>
                     <!-- !container-path -->
@@ -203,11 +203,11 @@
               <button type="button" class="btn btn-primary btn-sm" ng-disabled="!formValues.network" ng-click="createTemplate()">Create</button>
               <i id="createContainerSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px; display: none;"></i>
               <span class="small text-muted" style="margin-left: 10px" ng-if="globalNetworkCount === 0 && applicationState.endpoint.mode.provider === 'DOCKER_SWARM' && !state.formValidationError">
-                When using Swarm, we recommend deploying containers in a shared network. Looks like you don't have any shared network, head over the <a ui-sref="networks">networks view</a> to create one.
+                当使用Swarm时, 我们推荐在共享网络下布署容器.你还没有共享网络,进入 <a ui-sref="networks">网络视图</a> 创建一个.
               </span>
               <span ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM_MODE' && !state.formValidationError" style="margin-left: 10px">
                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                <span class="small text-muted" style="margin-left: 5px;">App templates cannot be deployed as Swarm Mode services for the moment. You can still use them to quickly deploy containers on the Docker host.</span>
+                <span class="small text-muted" style="margin-left: 5px;">应用模版当前不能布署在Swarm Mode服务模式下. 你仍然能够快速布署他们在Docker主机上</span>
               </span>
               <span class="text-danger" ng-if="state.formValidationError" style="margin-left: 5px;">{{ state.formValidationError }}</span>
             </div>
@@ -221,9 +221,9 @@
 
   <div class="col-sm-12" style="height: 100%">
     <rd-template-widget>
-      <rd-widget-header icon="fa-rocket" title="Templates">
+      <rd-widget-header icon="fa-rocket" title="模版">
         <div ng-if="availableCategories.length > 0" class="pull-right">
-          Category
+          类别
           <select ng-model="state.filters.Categories">
             <option value="!">All</option>
             <option ng-repeat="category in availableCategories" value="{{ category }}">{{ category }}</option>
@@ -288,10 +288,10 @@
             <!-- !template -->
           </div>
           <div ng-if="!templates" class="text-center text-muted">
-            Loading...
+            ...
           </div>
           <div ng-if="(templates | filter:state.filters:true).length == 0" class="text-center text-muted">
-            No templates available.
+            没有可用模版
           </div>
         </div>
       </rd-widget-body>

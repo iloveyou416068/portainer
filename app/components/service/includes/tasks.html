@@ -1,8 +1,8 @@
 <div ng-if="tasks.length > 0 && nodes" id="service-tasks">
   <rd-widget>
-    <rd-widget-header icon="fa-tasks" title="Associated tasks">
+    <rd-widget-header icon="fa-tasks" title="服务相关任务">
       <div class="pull-right">
-      Items per page:
+      每页大小:
       <select ng-model="state.pagination_count" ng-change="changePaginationCount()">
         <option value="0">All</option>
         <option value="10">10</option>

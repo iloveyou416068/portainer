@@ -1,21 +1,21 @@
 <rd-header>
-  <rd-header-title title="Registry access">
+  <rd-header-title title="仓库访问控制">
     <i id="loadingViewSpinner" class="fa fa-cog fa-spin"></i>
   </rd-header-title>
   <rd-header-content>
-    <a ui-sref="registries">Registries</a> &gt; <a ui-sref="registry({id: registry.Id})">{{ registry.Name }}</a> &gt; Access management
+    <a ui-sref="registries">仓库</a> &gt; <a ui-sref="registry({id: registry.Id})">{{ registry.Name }}</a> &gt; 访问管理
   </rd-header-content>
 </rd-header>
 
 <div class="row" ng-if="registry">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-plug" title="Registry"></rd-widget-header>
+      <rd-widget-header icon="fa-plug" title="仓库"></rd-widget-header>
       <rd-widget-body classes="no-padding">
         <table class="table">
           <tbody>
             <tr>
-              <td>Name</td>
+              <td>名称</td>
               <td>
                 {{ registry.Name }}
               </td>
@@ -29,8 +29,7 @@
             <tr>
               <td colspan="2">
                 <span class="small text-muted">
-                  You can select which user or team can access this registry by moving them to the authorized accesses table. Simply click
-                  on a user or team entry to move it from one table to the other.
+                  你可以选择哪些用户或组可以通过移动他们的授权访问表访问仓库.只要单击用户或团队条目，就可以将它从一个表移动到另一个表。
                 </span>
               </td>
             </tr>

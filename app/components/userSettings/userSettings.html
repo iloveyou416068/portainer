@@ -1,19 +1,19 @@
 <rd-header>
-  <rd-header-title title="User settings">
+  <rd-header-title title="用户设置">
     <i id="loadingViewSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px;"></i>
   </rd-header-title>
-  <rd-header-content>User settings</rd-header-content>
+  <rd-header-content>用户设置</rd-header-content>
 </rd-header>
 
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-lock" title="Change user password"></rd-widget-header>
+      <rd-widget-header icon="fa-lock" title="变更用户密码"></rd-widget-header>
       <rd-widget-body>
         <form class="form-horizontal" style="margin-top: 15px;">
           <!-- current-password-input -->
           <div class="form-group">
-            <label for="current_password" class="col-sm-2 control-label text-left">Current password</label>
+            <label for="current_password" class="col-sm-2 control-label text-left">当前密码</label>
             <div class="col-sm-8">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
@@ -25,12 +25,12 @@
           <div class="form-group" ng-if="invalidPassword">
             <div class="col-sm-12">
               <i class="fa fa-times red-icon" aria-hidden="true"></i>
-              <span class="small text-muted">Current password is not valid</span>
+              <span class="small text-muted">密码错误</span>
             </div>
           </div>
           <!-- new-password-input -->
           <div class="form-group">
-            <label for="new_password" class="col-sm-2 control-label text-left">New password</label>
+            <label for="new_password" class="col-sm-2 control-label text-left">新密码</label>
             <div class="col-sm-8">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
@@ -42,12 +42,12 @@
           <div class="form-group">
             <div class="col-sm-12">
               <i ng-class="{true: 'fa fa-check green-icon', false: 'fa fa-times red-icon'}[formValues.newPassword.length >= 8]" aria-hidden="true"></i>
-              <span class="small text-muted">Your new password must be at least 8 characters long</span>
+              <span class="small text-muted">新密码必须至少8个字符长度</span>
             </div>
           </div>
           <!-- confirm-password-input -->
           <div class="form-group">
-            <label for="confirm_password" class="col-sm-2 control-label text-left">Confirm password</label>
+            <label for="confirm_password" class="col-sm-2 control-label text-left">确认密码</label>
             <div class="col-sm-8">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
@@ -59,10 +59,10 @@
           <!-- !confirm-password-input -->
           <div class="form-group">
             <div class="col-sm-12">
-              <button type="submit" class="btn btn-primary btn-sm" ng-disabled="AuthenticationMethod !== 1 || !formValues.currentPassword || formValues.newPassword.length < 8 || formValues.newPassword !== formValues.confirmPassword" ng-click="updatePassword()">Update password</button>
+              <button type="submit" class="btn btn-primary btn-sm" ng-disabled="AuthenticationMethod !== 1 || !formValues.currentPassword || formValues.newPassword.length < 8 || formValues.newPassword !== formValues.confirmPassword" ng-click="updatePassword()">更新密码</button>
               <span class="text-muted small" style="margin-left: 5px;" ng-if="AuthenticationMethod === 2">
                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                You cannot change your password when using LDAP authentication.
+                你不能使用LDAP身份验证时更改您的密码。
               </span>
             </div>
           </div>

@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
-
 binary="portainer-$1-$2"
-
 mkdir -p dist
+tmp=$3
+#export GOPATH=$GOPATH:/upload/portainer
+export GOPATH=$GOPATH:$tmp
+mkdir -p $tmp/src/portainer
+cp -r api/** src/portainer
+cd src
+GOOS=$1 GOARCH=$2 go build -o portainer/cmd/portainer/$binary portainer/cmd/portainer
+pwd
+cd ..
+mv src/portainer/cmd/portainer/$binary dist/
 
-mkdir -p api/cmd/portainer/$binary
-
-docker run -tv  $(pwd)/api:/src -e BUILD_GOOS="$1" -e BUILD_GOARCH="$2" portainer/golang-builder:cross-platform /src/cmd/portainer
-
-mv "api/cmd/portainer/$binary" dist/
-#sha256sum "dist/$binary" > portainer-checksum.txt
+rm -rf src

@@ -44,7 +44,8 @@ function ($q, $scope, $state, $stateParams, $filter, Container, ContainerCommit,
       $('#loadingViewSpinner').hide();
     }, function (e) {
       $('#loadingViewSpinner').hide();
-      Notifications.error('Failure', e, 'Unable to retrieve container info');
+      // Notifications.error('Failure', e, 'Unable to retrieve container info');
+      Notifications.error('Failure', e, '无法检索容器信息');
     });
   };
 
@@ -55,7 +56,8 @@ function ($q, $scope, $state, $stateParams, $filter, Container, ContainerCommit,
       Notifications.success('Container started', $stateParams.id);
     }, function (e) {
       update();
-      Notifications.error('Failure', e, 'Unable to start container');
+      // Notifications.error('Failure', e, 'Unable to start container');
+      Notifications.error('Failure', e, '无法启动容器');
     });
   };
 

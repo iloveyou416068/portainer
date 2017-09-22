@@ -1,24 +1,24 @@
 <rd-header>
-  <rd-header-title title="Settings">
+  <rd-header-title title="设置">
     <i id="loadingViewSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px;"></i>
   </rd-header-title>
-  <rd-header-content>Settings</rd-header-content>
+  <rd-header-content>设置</rd-header-content>
 </rd-header>
 
 <div class="row">
   <div class="col-sm-12">
     <rd-widget>
-      <rd-widget-header icon="fa-cogs" title="Application settings"></rd-widget-header>
+      <rd-widget-header icon="fa-cogs" title="应用设置"></rd-widget-header>
       <rd-widget-body>
         <form class="form-horizontal">
           <!-- logo -->
           <div class="col-sm-12 form-section-title">
-            Logo
+            Logo(徽标)
           </div>
           <div class="form-group">
             <div class="col-sm-12">
               <label for="toggle_logo" class="control-label text-left">
-                Use custom logo
+                使用自定义徽标
               </label>
               <label class="switch" style="margin-left: 20px;">
                 <input type="checkbox" name="toggle_logo" ng-model="formValues.customLogo"><i></i>
@@ -28,7 +28,7 @@
           <div ng-if="formValues.customLogo">
             <div class="form-group">
               <span class="col-sm-12 text-muted small">
-                You can specify the URL to your logo here. For an optimal display, logo dimensions should be 155px by 55px.
+                您可以在这里指定您的徽标的URL. 最佳显示, 图标的尺寸应该是155px by 55px.
               </span>
             </div>
             <div class="form-group">
@@ -43,12 +43,12 @@
           <!-- !logo -->
           <!-- app-templates -->
           <div class="col-sm-12 form-section-title">
-            App Templates
+            应用程序模板
           </div>
           <div class="form-group">
             <div class="col-sm-12">
               <label for="toggle_templates" class="control-label text-left">
-                Use custom templates
+                使用自定义模板
               </label>
               <label class="switch" style="margin-left: 20px;">
                 <input type="checkbox" name="toggle_templates" ng-model="formValues.customTemplates"><i></i>
@@ -58,7 +58,7 @@
           <div ng-if="formValues.customTemplates">
             <div class="form-group">
               <span class="col-sm-12 text-muted small">
-                You can specify the URL to your own template definitions file here. See <a href="https://portainer.readthedocs.io/en/stable/templates.html" target="_blank">Portainer documentation</a> for more details.
+                您可以在这里指定您自己的模板定义文件的URL. 查看 <a href="https://portainer.readthedocs.io/en/stable/templates.html" target="_blank">Portainer documentation</a> 有更加详细描述.
               </span>
             </div>
             <div class="form-group" >
@@ -73,8 +73,8 @@
           <div class="form-group">
             <div class="col-sm-12">
               <label for="toggle_external_contrib" class="control-label text-left">
-                Hide external contributions
-                <portainer-tooltip position="bottom" message="When enabled, external contributions such as LinuxServer.io will not be displayed in the sidebar."></portainer-tooltip>
+                隐藏外部的资源
+                <portainer-tooltip position="bottom" message="当启用时，外部的资源如linuxserver.io不会在侧边栏显示."></portainer-tooltip>
               </label>
               <label class="switch" style="margin-left: 20px;">
                 <input type="checkbox" name="toggle_external_contrib" ng-model="formValues.externalContributions"><i></i>
@@ -100,16 +100,16 @@
 <div class="row">
   <div class="col-sm-12">
     <rd-widget>
-      <rd-widget-header icon="fa-tags" title="Hidden containers"></rd-widget-header>
+      <rd-widget-header icon="fa-tags" title="隐藏的容器"></rd-widget-header>
       <rd-widget-body>
         <form class="form-horizontal">
           <div class="form-group">
             <span class="col-sm-12 text-muted small">
-              You can hide containers with specific labels from Portainer UI. You need to specify the label name and value.
+              您可以隐藏特定标签的容器通过UI. 需要指定标签名称和值.
             </span>
           </div>
           <div class="form-group">
-            <label for="header_name" class="col-sm-1 control-label text-left">Name</label>
+            <label for="header_name" class="col-sm-1 control-label text-left">名称</label>
             <div class="col-sm-11 col-md-4">
               <input type="text" class="form-control" id="header_name" ng-model="formValues.labelName" placeholder="e.g. com.example.foo">
             </div>
@@ -135,13 +135,13 @@
                   <tr ng-repeat="label in settings.BlackListedLabels">
                     <td>{{ label.name }}</td>
                     <td>{{ label.value }}</td>
-                    <td><button type="button" class="btn btn-danger btn-xs" ng-click="removeFilteredContainerLabel($index)"><i class="fa fa-trash space-right" aria-hidden="true"></i>Remove</button></td>
+                    <td><button type="button" class="btn btn-danger btn-xs" ng-click="removeFilteredContainerLabel($index)"><i class="fa fa-trash space-right" aria-hidden="true"></i>删除</button></td>
                   </tr>
                   <tr ng-if="settings.BlackListedLabels.length === 0">
-                    <td colspan="3" class="text-center text-muted">No filter available.</td>
+                    <td colspan="3" class="text-center text-muted">无可用过滤器.</td>
                   </tr>
                   <tr ng-if="!settings.BlackListedLabels">
-                    <td colspan="3" class="text-center text-muted">Loading...</td>
+                    <td colspan="3" class="text-center text-muted">加载...</td>
                   </tr>
                 </tbody>
               </table>

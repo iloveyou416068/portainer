@@ -1,7 +1,7 @@
 package cron
 
 import (
-	"github.com/portainer/portainer"
+	"portainer"
 	"github.com/robfig/cron"
 )
 

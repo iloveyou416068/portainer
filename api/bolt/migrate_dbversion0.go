@@ -2,7 +2,7 @@ package bolt
 
 import (
 	"github.com/boltdb/bolt"
-	"github.com/portainer/portainer"
+	"portainer"
 )
 
 func (m *Migrator) updateAdminUserToDBVersion1() error {

@@ -1,6 +1,6 @@
 <div>
   <rd-widget>
-    <rd-widget-header icon="fa-tasks" title="Published ports">
+    <rd-widget-header icon="fa-tasks" title="发布端口">
       <div class="nopadding">
         <a class="btn btn-default btn-sm pull-right" ng-click="isUpdating ||addPublishedPort(service)" ng-disabled="isUpdating">
           <i class="fa fa-plus-circle" aria-hidden="true"></i> port mapping
@@ -8,17 +8,17 @@
       </div>
     </rd-widget-header>
     <rd-widget-body ng-if="!service.Ports || service.Ports.length === 0">
-      <p>This service has no ports published.</p>
+      <p>此服务没有发布端口.</p>
     </rd-widget-body>
     <rd-widget-body ng-if="service.Ports && service.Ports.length > 0" classes="no-padding">
       <table class="table" >
         <thead>
           <tr>
-            <th>Host port</th>
-            <th>Container port</th>
-            <th>Protocol</th>
-            <th>Publish mode</th>
-            <th>Actions</th>
+            <th>主机端口</th>
+            <th>容器端口</th>
+            <th>协议</th>
+            <th>发布模式</th>
+            <th>操作</th>
           </tr>
         </thead>
         <tbody>

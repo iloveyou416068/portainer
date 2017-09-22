@@ -32,7 +32,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'config:dev',
     'clean:app',
-    'shell:buildBinary:linux:amd64',
+    'shell:buildBinary:linux:amd64:',
     'vendor:regular',
     'html2js',
     'useminPrepare:dev',
@@ -42,8 +42,8 @@ module.exports = function (grunt) {
     'copy',
     'after-copy'
   ]);
-  grunt.task.registerTask('release', 'release:<platform>:<arch>', function(p, a) {
-    grunt.task.run(['config:prod', 'clean:all', 'shell:buildBinary:'+p+':'+a, 'before-copy', 'copy:assets', 'after-copy' ]);
+  grunt.task.registerTask('release', 'release:<platform>:<arch>:<path>', function(p, a, path) {
+    grunt.task.run(['config:prod', 'clean:all', 'shell:buildBinary:'+p+':'+a+':'+path, 'before-copy', 'copy:assets', 'after-copy' ]);
   });
   grunt.registerTask('lint', ['eslint']);
   grunt.registerTask('run-dev', ['build', 'shell:run', 'watch:build']);
@@ -169,12 +169,15 @@ module.exports = function (grunt) {
     },
     shell: {
       buildBinary: {
-        command: function (p, a) {
+        command: function (p, a, path) {
                    var binfile = 'dist/portainer-'+p+'-'+a;
                    if (grunt.file.isFile( ( p === 'windows' ) ? binfile+'.exe' : binfile )) {
                      return 'echo \'BinaryExists\'';
                    } else {
-                     return 'build/build_in_container.sh ' + p + ' ' + a;
+                     if (path.isNil) {
+                         return 'build/build_in_container.sh ' + p + ' ' + a;
+                     }
+                     return 'build/build_in_container.sh ' + p + ' ' + a + ' ' + path;
                    }
                  }
       },

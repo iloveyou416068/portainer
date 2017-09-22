@@ -1,21 +1,21 @@
 <rd-header>
-  <rd-header-title title="Endpoint access">
+  <rd-header-title title="端点访问">
     <i id="loadingViewSpinner" class="fa fa-cog fa-spin"></i>
   </rd-header-title>
   <rd-header-content>
-    <a ui-sref="endpoints">Endpoints</a> &gt; <a ui-sref="endpoint({id: endpoint.Id})">{{ endpoint.Name }}</a> &gt; Access management
+    <a ui-sref="endpoints">端点</a> &gt; <a ui-sref="endpoint({id: endpoint.Id})">{{ endpoint.Name }}</a> &gt; 访问管理
   </rd-header-content>
 </rd-header>
 
 <div class="row" ng-if="endpoint">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-plug" title="Endpoint"></rd-widget-header>
+      <rd-widget-header icon="fa-plug" title="端点"></rd-widget-header>
       <rd-widget-body classes="no-padding">
         <table class="table">
           <tbody>
             <tr>
-              <td>Name</td>
+              <td>名称</td>
               <td>
                 {{ endpoint.Name }}
               </td>
@@ -29,8 +29,7 @@
             <tr>
               <td colspan="2">
                 <span class="small text-muted">
-                  You can select which user or team can access this endpoint by moving them to the authorized accesses table. Simply click
-                  on a user or team entry to move it from one table to the other.
+                  可以选择哪一个用户或团队通过将其移动到授权访问表来访问此端点。只要单击用户或团队条目，就可以将它从一个表移动到另一个表。
                 </span>
               </td>
             </tr>

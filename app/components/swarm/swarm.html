@@ -1,31 +1,31 @@
 <rd-header>
-  <rd-header-title title="Cluster overview">
+  <rd-header-title title="集群概述">
     <a data-toggle="tooltip" title="Refresh" ui-sref="swarm" ui-sref-opts="{reload: true}">
       <i class="fa fa-refresh" aria-hidden="true"></i>
     </a>
     <i id="loadingViewSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px;"></i>
   </rd-header-title>
-  <rd-header-content>Swarm</rd-header-content>
+  <rd-header-content>Swarm(集群)</rd-header-content>
 </rd-header>
 
 <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-object-group" title="Cluster status"></rd-widget-header>
+      <rd-widget-header icon="fa-object-group" title="集群状态"></rd-widget-header>
       <rd-widget-body classes="no-padding">
         <table class="table">
           <tbody>
             <tr>
-              <td>Nodes</td>
+              <td>节点</td>
               <td ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM'">{{ swarm.Nodes }}</td>
               <td ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM_MODE'">{{ info.Swarm.Nodes }}</td>
             </tr>
             <tr ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM'">
-              <td>Images</td>
+              <td>镜像</td>
               <td>{{ info.Images }}</td>
             </tr>
             <tr ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM'">
-              <td>Swarm version</td>
+              <td>Swarm版本</td>
               <td>{{ docker.Version|swarmversion }}</td>
             </tr>
             <tr>
@@ -68,9 +68,9 @@
 <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM'">
     <rd-widget>
-      <rd-widget-header icon="fa-hdd-o" title="Node status">
+      <rd-widget-header icon="fa-hdd-o" title="节点状态">
         <div class="pull-right">
-          Items per page:
+          每页大小:
           <select ng-model="state.pagination_count" ng-change="changePaginationCount()">
             <option value="0">All</option>
             <option value="10">10</option>
@@ -86,7 +86,7 @@
             <tr>
               <th>
                 <a ui-sref="swarm" ng-click="order('name')">
-                  Name
+                  名称
                   <span ng-show="sortType == 'name' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
                   <span ng-show="sortType == 'name' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
                 </a>
@@ -147,9 +147,9 @@
   </div>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-if="applicationState.endpoint.mode.provider === 'DOCKER_SWARM_MODE'">
     <rd-widget>
-      <rd-widget-header icon="fa-hdd-o" title="Node status">
+      <rd-widget-header icon="fa-hdd-o" title="节点状态">
         <div class="pull-right">
-          Items per page:
+          每页大小:
           <select ng-model="state.pagination_count" ng-change="changePaginationCount()">
             <option value="0">All</option>
             <option value="10">10</option>

@@ -90,7 +90,8 @@ var app = angular.module('portainer', [
         return LocalStorage.getJWT();
       }],
       unauthenticatedRedirector: ['$state', function($state) {
-        $state.go('auth', {error: 'Your session has expired'});
+        // $state.go('auth', {error: 'Your session has expired'});
+        $state.go('auth', {error: '会话已过期'});
       }]
     });
     $httpProvider.interceptors.push('jwtInterceptor');

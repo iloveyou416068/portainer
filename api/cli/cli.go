@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/portainer/portainer"
+	"portainer"
 
 	"os"
 	"strings"

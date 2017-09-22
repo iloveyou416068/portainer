@@ -1,24 +1,24 @@
 <rd-header>
-  <rd-header-title title="Users">
+  <rd-header-title title="用户">
     <a data-toggle="tooltip" title="Refresh" ui-sref="users" ui-sref-opts="{reload: true}">
       <i class="fa fa-refresh" aria-hidden="true"></i>
     </a>
     <i id="loadUsersSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px;"></i>
   </rd-header-title>
-  <rd-header-content>User management</rd-header-content>
+  <rd-header-content>用户管理</rd-header-content>
 </rd-header>
 
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-plus" title="Add a new user">
+      <rd-widget-header icon="fa-plus" title="添加新用户">
       </rd-widget-header>
       <rd-widget-body>
         <form class="form-horizontal">
           <!-- name-input -->
           <div class="form-group">
             <label for="username" class="col-sm-3 col-lg-2 control-label text-left">
-              Username
+              用户名
               <portainer-tooltip ng-if="AuthenticationMethod === 2" position="bottom" message="Username must exactly match username defined in external LDAP source."></portainer-tooltip>
             </label>
             <div class="col-sm-8">
@@ -31,7 +31,7 @@
           <!-- !name-input -->
           <!-- new-password-input -->
           <div class="form-group" ng-if="AuthenticationMethod === 1">
-            <label for="password" class="col-sm-3 col-lg-2 control-label text-left">Password</label>
+            <label for="password" class="col-sm-3 col-lg-2 control-label text-left">密码</label>
             <div class="col-sm-8">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
@@ -42,7 +42,7 @@
           <!-- !new-password-input -->
           <!-- confirm-password-input -->
           <div class="form-group" ng-if="AuthenticationMethod === 1">
-            <label for="confirm_password" class="col-sm-3 col-lg-2 control-label text-left">Confirm password</label>
+            <label for="confirm_password" class="col-sm-3 col-lg-2 control-label text-left">确认密码</label>
             <div class="col-sm-8">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
@@ -57,7 +57,7 @@
             <div class="col-sm-12">
               <label for="permissions" class="control-label text-left">
                 Administrator
-                <portainer-tooltip position="bottom" message="Administrators have access to Portainer settings management as well as full control over all defined endpoints and their resources."></portainer-tooltip>
+                <portainer-tooltip position="bottom" message="管理员能够访问Portainer管理配置,可以定义所有对端的访问和他们的资源控制."></portainer-tooltip>
               </label>
               <label class="switch" style="margin-left: 20px;">
                 <input type="checkbox" ng-model="formValues.Administrator"><i></i>
@@ -69,10 +69,10 @@
           <div class="form-group" ng-if="!formValues.Administrator">
             <div class="col-sm-12">
               <label class="control-label text-left">
-                Add to team(s)
+                添加团队
               </label>
               <span class="small text-muted" style="margin-left: 20px;" ng-if="teams.length === 0">
-                You have not yet created any team. Head over the <a ui-sref="teams">teams view</a> to manage user teams.
+                你还没有创建团队. 进入 <a ui-sref="teams">团队视图</a>管理用户团队.
               </span>
               <span isteven-multi-select
                ng-if="teams.length > 0"
@@ -92,13 +92,13 @@
           <div class="form-group" ng-if="isAdmin && !formValues.Administrator && formValues.Teams.length === 0">
             <div class="col-sm-12">
               <span class="small text-muted">
-                Note: non-administrator users with no team do not have access to any endpoint by default. Head over the <a ui-sref="endpoints">endpoints view</a> to manage their accesses.
+                Note: 没有团队的非管理员用户默认情况下不能访问任何端点.进入<a ui-sref="endpoints">链接端视图</a> 管理访问权限.
               </span>
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-12">
-              <button type="button" class="btn btn-primary btn-sm" ng-disabled="!state.validUsername || formValues.Username === '' || (AuthenticationMethod === 1 && formValues.Password === '') || (AuthenticationMethod === 1 && formValues.Password !== formValues.ConfirmPassword)" ng-click="addUser()"><i class="fa fa-user-plus" aria-hidden="true"></i> Add user</button>
+              <button type="button" class="btn btn-primary btn-sm" ng-disabled="!state.validUsername || formValues.Username === '' || (AuthenticationMethod === 1 && formValues.Password === '') || (AuthenticationMethod === 1 && formValues.Password !== formValues.ConfirmPassword)" ng-click="addUser()"><i class="fa fa-user-plus" aria-hidden="true"></i> 添加用户</button>
               <i id="createUserSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px; display: none;"></i>
               <span class="text-danger" ng-if="state.userCreationError" style="margin: 5px;">
                 <i class="fa fa-exclamation-circle" aria-hidden="true"></i> {{ state.userCreationError }}
@@ -114,9 +114,9 @@
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-user" title="Users">
+      <rd-widget-header icon="fa-user" title="用户">
         <div class="pull-right">
-          Items per page:
+          每页大小:
           <select ng-model="state.pagination_count" ng-change="changePaginationCount()">
             <option value="0">All</option>
             <option value="10">10</option>
@@ -128,7 +128,7 @@
       </rd-widget-header>
       <rd-widget-taskbar classes="col-lg-12">
         <div class="pull-left" ng-if="isAdmin">
-          <button type="button" class="btn btn-danger" ng-click="removeAction()" ng-disabled="!state.selectedItemCount"><i class="fa fa-trash space-right" aria-hidden="true"></i>Remove</button>
+          <button type="button" class="btn btn-danger" ng-click="removeAction()" ng-disabled="!state.selectedItemCount"><i class="fa fa-trash space-right" aria-hidden="true"></i>删除</button>
         </div>
         <div class="pull-right">
           <input type="text" id="filter" ng-model="state.filter" placeholder="Filter..." class="form-control input-sm" />
@@ -185,7 +185,7 @@
                 </td>
               </tr>
             <tr ng-if="!users">
-              <td colspan="4" class="text-center text-muted">Loading...</td>
+              <td colspan="4" class="text-center text-muted">加载...</td>
             </tr>
             <tr ng-if="users.length == 0">
               <td colspan="4" class="text-center text-muted">No users available.</td>

@@ -1,15 +1,15 @@
-package main // import "github.com/portainer/portainer"
+package main
 
 import (
-	"github.com/portainer/portainer"
-	"github.com/portainer/portainer/bolt"
-	"github.com/portainer/portainer/cli"
-	"github.com/portainer/portainer/cron"
-	"github.com/portainer/portainer/crypto"
-	"github.com/portainer/portainer/file"
-	"github.com/portainer/portainer/http"
-	"github.com/portainer/portainer/jwt"
-	"github.com/portainer/portainer/ldap"
+	"portainer"
+	"portainer/bolt"
+	"portainer/cli"
+	"portainer/cron"
+	"portainer/crypto"
+	"portainer/file"
+	"portainer/http"
+	"portainer/jwt"
+	"portainer/ldap"
 
 	"log"
 )

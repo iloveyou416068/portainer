@@ -1,7 +1,7 @@
 package file
 
 import (
-	"github.com/portainer/portainer"
+	"portainer"
 
 	"io"
 	"os"

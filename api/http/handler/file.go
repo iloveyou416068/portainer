@@ -3,8 +3,8 @@ package handler
 import (
 	"os"
 
-	"github.com/portainer/portainer"
-	httperror "github.com/portainer/portainer/http/error"
+	"portainer"
+	httperror "portainer/http/error"
 
 	"log"
 	"net/http"

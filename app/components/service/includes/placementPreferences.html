@@ -1,14 +1,14 @@
 <div ng-if="service.ServicePreferences" id="service-placement-preferences">
   <rd-widget>
-    <rd-widget-header icon="fa-tasks" title="Placement preferences">
+    <rd-widget-header icon="fa-tasks" title="服务存放配置">
       <div class="nopadding">
         <a class="btn btn-default btn-sm pull-right" ng-click="isUpdating || addPlacementPreference(service)" ng-disabled="isUpdating">
-          <i class="fa fa-plus-circle" aria-hidden="true"></i> placement preference
+          <i class="fa fa-plus-circle" aria-hidden="true"></i> 服务存放配置
         </a>
       </div>
     </rd-widget-header>
     <rd-widget-body ng-if="service.ServicePreferences.length === 0">
-      <p>There are no placement preferences for this service.</p>
+      <p>服务未指定存放位置.</p>
     </rd-widget-body>
     <rd-widget-body ng-if="service.ServicePreferences.length > 0" classes="no-padding">
       <table class="table" >
@@ -42,13 +42,13 @@
     <rd-widget-footer>
       <div class="btn-toolbar" role="toolbar">
         <div class="btn-group" role="group">
-          <button type="button" class="btn btn-primary btn-sm" ng-disabled="!hasChanges(service, ['ServicePreferences'])" ng-click="updateService(service)">Apply changes</button>
+          <button type="button" class="btn btn-primary btn-sm" ng-disabled="!hasChanges(service, ['ServicePreferences'])" ng-click="updateService(service)">应用变更</button>
           <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li><a ng-click="cancelChanges(service, ['ServicePreferences'])">Reset changes</a></li>
-            <li><a ng-click="cancelChanges(service)">Reset all changes</a></li>
+            <li><a ng-click="cancelChanges(service, ['ServicePreferences'])">重置变更</a></li>
+            <li><a ng-click="cancelChanges(service)">重置所有变更</a></li>
           </ul>
         </div>
       </div>

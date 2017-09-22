@@ -1,6 +1,6 @@
 <div>
   <rd-widget>
-    <rd-widget-header icon="fa-list-alt" title="Container spec"></rd-widget-header>
+    <rd-widget-header icon="fa-list-alt" title="容器说明"></rd-widget-header>
     <rd-widget-body classes="no-padding">
       <table class="table">
         <tbody>
@@ -9,16 +9,16 @@
             <td><code ng-if="service.Command">{{ service.Command|command }}</code></td>
             <td>
               <p class="small text-muted" style="margin-top: 10px;">
-                Command to execute.
+                可执行命令
               </p>
             </td>
           </tr>
           <tr>
-            <td>Args</td>
+            <td>参数</td>
             <td><code ng-if="service.Arguments">{{ service.Arguments }}</code></td>
             <td>
               <p class="small text-muted" style="margin-top: 10px;">
-                Arguments passed to command in container.
+                容器中传递给命令的参数
               </p>
             </td>
           </tr>
@@ -32,20 +32,20 @@
             </td>
           </tr>
           <tr>
-            <td>Working directory</td>
+            <td>工作目录</td>
             <td>{{ service.Dir }}</td>
             <td>
               <p class="small text-muted" style="margin-top: 10px;">
-                Working directory inside the container.
+                容器中工作目录
               </p>
             </td>
           </tr>
           <tr>
-            <td>Stop grace period</td>
+            <td>停止时等待时间</td>
             <td>{{ service.StopGracePeriod }}</td>
             <td>
               <p class="small text-muted" style="margin-top: 10px;">
-                Time to wait before force killing a container (default none).
+                强制停掉容器前，需要等待多长时间.（默认为none）
               </p>
             </td>
           </tr>

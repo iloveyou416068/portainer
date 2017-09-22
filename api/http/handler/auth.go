@@ -1,8 +1,7 @@
 package handler
 
 import (
-	"github.com/portainer/portainer"
-
+	"portainer"
 	"encoding/json"
 	"log"
 	"net/http"
@@ -10,8 +9,8 @@ import (
 
 	"github.com/asaskevich/govalidator"
 	"github.com/gorilla/mux"
-	httperror "github.com/portainer/portainer/http/error"
-	"github.com/portainer/portainer/http/security"
+	httperror "portainer/http/error"
+	"portainer/http/security"
 )
 
 // AuthHandler represents an HTTP API handler for managing authentication.
@@ -28,12 +27,12 @@ type AuthHandler struct {
 
 const (
 	// ErrInvalidCredentialsFormat is an error raised when credentials format is not valid
-	ErrInvalidCredentialsFormat = portainer.Error("Invalid credentials format")
+	ErrInvalidCredentialsFormat = portainer.Error("无效的证书格式") // Invalid credentials format
 	// ErrInvalidCredentials is an error raised when credentials for a user are invalid
-	ErrInvalidCredentials = portainer.Error("Invalid credentials")
+	ErrInvalidCredentials = portainer.Error("认证失败") // Invalid credentials
 	// ErrAuthDisabled is an error raised when trying to access the authentication endpoints
 	// when the server has been started with the --no-auth flag
-	ErrAuthDisabled = portainer.Error("Authentication is disabled")
+	ErrAuthDisabled = portainer.Error("认证不可用") // Authentication is disabled
 )
 
 // NewAuthHandler returns a new instance of AuthHandler.

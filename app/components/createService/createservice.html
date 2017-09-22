@@ -3,7 +3,7 @@
     <i id="loadingViewSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px;"></i>
   </rd-header-title>
   <rd-header-content>
-    <a ui-sref="services">Services</a> &gt; Add service
+    <a ui-sref="services">服务</a> &gt; 添加服务
   </rd-header-content>
 </rd-header>
 
@@ -14,14 +14,14 @@
         <form class="form-horizontal">
           <!-- name-input -->
           <div class="form-group">
-            <label for="service_name" class="col-sm-1 control-label text-left">Name</label>
+            <label for="service_name" class="col-sm-1 control-label text-left">名称</label>
             <div class="col-sm-11">
               <input type="text" class="form-control" ng-model="formValues.Name" id="service_name" placeholder="e.g. myService">
             </div>
           </div>
           <!-- !name-input -->
           <div class="col-sm-12 form-section-title">
-            Image configuration
+             镜像配置
           </div>
           <!-- image-and-registry -->
           <div class="form-group">
@@ -29,13 +29,13 @@
           </div>
           <!-- !image-and-registry -->
           <div class="col-sm-12 form-section-title">
-            Scheduling
+            调度
           </div>
           <!-- scheduling-mode -->
           <div class="form-group">
             <div class="col-sm-12">
               <label class="control-label text-left">
-                Scheduling mode
+                调度模式
               </label>
               <div class="btn-group btn-group-sm" style="margin-left: 20px;">
                 <label class="btn btn-primary" ng-model="formValues.Mode" uib-btn-radio="'global'">Global</label>
@@ -46,28 +46,28 @@
           <div class="form-group form-inline" ng-if="formValues.Mode === 'replicated'">
             <div class="col-sm-12">
               <label class="control-label text-left">
-                Replicas
+                副本数
               </label>
               <input type="number" class="form-control" ng-model="formValues.Replicas" id="replicas" placeholder="e.g. 3" style="margin-left: 20px;">
             </div>
           </div>
           <!-- !scheduling-mode -->
           <div class="col-sm-12 form-section-title">
-            Ports configuration
+            端口配置
           </div>
           <!-- port-mapping -->
           <div class="form-group">
             <div class="col-sm-12" style="margin-top: 5px;">
-              <label class="control-label text-left">Port mapping</label>
+              <label class="control-label text-left">端口映射</label>
               <span class="label label-default interactive" style="margin-left: 10px;" ng-click="addPortBinding()">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i> map additional port
+                <i class="fa fa-plus-circle" aria-hidden="true"></i> 附加端口映射
               </span>
             </div>
             <div class="col-sm-12 form-inline" style="margin-top: 10px;">
               <div ng-repeat="portBinding in formValues.Ports" style="margin-top: 2px;">
                 <!-- host-port -->
                 <div class="input-group col-sm-3 input-group-sm">
-                  <span class="input-group-addon">host</span>
+                  <span class="input-group-addon">主机</span>
                   <input type="text" class="form-control" ng-model="portBinding.PublishedPort" placeholder="e.g. 80 or 1.2.3.4:80 (optional)">
                 </div>
                 <!-- !host-port -->
@@ -76,7 +76,7 @@
                 </span>
                 <!-- container-port -->
                 <div class="input-group col-sm-3 input-group-sm">
-                  <span class="input-group-addon">container</span>
+                  <span class="input-group-addon">容器</span>
                   <input type="text" class="form-control" ng-model="portBinding.TargetPort" placeholder="e.g. 80">
                 </div>
                 <!-- !container-port -->
@@ -105,12 +105,12 @@
           <!-- !access-control -->
           <!-- actions -->
           <div class="col-sm-12 form-section-title">
-            Actions
+            操作
           </div>
           <div class="form-group">
             <div class="col-sm-12">
-              <button type="button" class="btn btn-primary btn-sm" ng-disabled="!formValues.Image" ng-click="create()">Create service</button>
-              <a type="button" class="btn btn-default btn-sm" ui-sref="services">Cancel</a>
+              <button type="button" class="btn btn-primary btn-sm" ng-disabled="!formValues.Image" ng-click="create()">创建服务</button>
+              <a type="button" class="btn btn-default btn-sm" ui-sref="services">取消</a>
               <i id="createServiceSpinner" class="fa fa-cog fa-spin" style="margin-left: 5px; display: none;"></i>
               <span class="text-danger" ng-if="state.formValidationError" style="margin-left: 5px;">{{ state.formValidationError }}</span>
             </div>

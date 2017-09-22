@@ -25,7 +25,9 @@ function ($scope, languageSwitch,$state, $stateParams, $window, $timeout, $sanit
       $state.go('dashboard');
     })
     .catch(function error(err) {
-      Notifications.error('Failure', err, 'Unable to connect to the Docker endpoint');
+      // Notifications.error('Failure', err, 'Unable to connect to the Docker endpoint');
+      Notifications.error('Failure', err, '无法连接到Docker endpoint');
+
     });
   }
 
@@ -40,7 +42,8 @@ function ($scope, languageSwitch,$state, $stateParams, $window, $timeout, $sanit
       }
     })
     .catch(function error(err) {
-      Notifications.error('Failure', err, 'Unable to retrieve endpoints');
+      // Notifications.error('Failure', err, 'Unable to retrieve endpoints');
+      Notifications.error('Failure', err, '无法检索endpoints');
     });
   }
 
@@ -52,7 +55,8 @@ function ($scope, languageSwitch,$state, $stateParams, $window, $timeout, $sanit
       }
     })
     .catch(function error(err) {
-      Notifications.error('Failure', err, 'Unable to verify administrator account existence');
+      // Notifications.error('Failure', err, 'Unable to verify administrator account existence');
+      Notifications.error('Failure', err, '无法验证管理员帐户是否存在');
     });
   }
 
@@ -81,11 +85,13 @@ function ($scope, languageSwitch,$state, $stateParams, $window, $timeout, $sanit
         $state.go('init.endpoint');
       } else if (endpoints.length === 0 && userDetails.role === 2) {
         Authentication.logout();
-        $scope.state.AuthenticationError = 'User not allowed. Please contact your administrator.';
+        // $scope.state.AuthenticationError = 'User not allowed. Please contact your administrator.';
+        $scope.state.AuthenticationError = '不允许用户。请联系您的系统管理员.';
       }
     })
     .catch(function error() {
-      $scope.state.AuthenticationError = 'Invalid credentials';
+      // $scope.state.AuthenticationError = 'Invalid credentials';
+        $scope.state.AuthenticationError = '认证失败';
     });
   };
 

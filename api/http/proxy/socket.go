@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 
-	httperror "github.com/portainer/portainer/http/error"
+	httperror "portainer/http/error"
 )
 
 type socketProxy struct {

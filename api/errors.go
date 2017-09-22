@@ -2,17 +2,17 @@ package portainer
 
 // General errors.
 const (
-	ErrUnauthorized           = Error("Unauthorized")
-	ErrResourceAccessDenied   = Error("Access denied to resource")
-	ErrResourceNotFound       = Error("Unable to find resource")
-	ErrUnsupportedDockerAPI   = Error("Unsupported Docker API response")
-	ErrMissingSecurityContext = Error("Unable to find security details in request context")
+	ErrUnauthorized           = Error("未授权") // Unauthorized
+	ErrResourceAccessDenied   = Error("资源拒绝访问") // Access denied to resource
+	ErrResourceNotFound       = Error("找不到资源") // Unable to find resource
+	ErrUnsupportedDockerAPI   = Error("不支持的DockerAPI响应") // Unsupported Docker API response
+	ErrMissingSecurityContext = Error("无法找到请求的上下文中的安全细节") // Unable to find security details in request context
 )
 
 // User errors.
 const (
-	ErrUserNotFound            = Error("User not found")
-	ErrUserAlreadyExists       = Error("User already exists")
+	ErrUserNotFound            = Error("未找到用户") // User not found
+	ErrUserAlreadyExists       = Error("用户已经存在") // User already exists
 	ErrInvalidUsername         = Error("Invalid username. White spaces are not allowed")
 	ErrAdminAlreadyInitialized = Error("An administrator user already exists")
 	ErrCannotRemoveAdmin       = Error("Cannot remove the default administrator account")

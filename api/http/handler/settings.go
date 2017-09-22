@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 
 	"github.com/asaskevich/govalidator"
-	"github.com/portainer/portainer"
-	"github.com/portainer/portainer/file"
-	httperror "github.com/portainer/portainer/http/error"
-	"github.com/portainer/portainer/http/security"
+	"portainer"
+	"portainer/file"
+	httperror "portainer/http/error"
+	"portainer/http/security"
 
 	"log"
 	"net/http"

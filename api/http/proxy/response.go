@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/portainer/portainer"
+	"portainer"
 )
 
 const (

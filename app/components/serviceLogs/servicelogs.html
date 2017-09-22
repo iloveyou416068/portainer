@@ -1,9 +1,9 @@
 <rd-header>
-  <rd-header-title title="Service logs">
+  <rd-header-title title="服务日志">
       <i id="loadingViewSpinner" class="fa fa-cog fa-spin"></i>
   </rd-header-title>
   <rd-header-content>
-    <a ui-sref="services">Services</a> > <a ui-sref="service({id: service.ID})">{{ service.Spec.Name }}</a> > Logs
+    <a ui-sref="services">服务</a> > <a ui-sref="service({id: service.ID})">{{ service.Spec.Name }}</a> > 日志
   </rd-header-content>
 </rd-header>
 
@@ -15,7 +15,7 @@
           <i class="fa fa-list-alt"></i>
         </div>
         <div class="title">{{ service.Spec.Name }}</div>
-        <div class="comment">Name</div>
+        <div class="comment">名称</div>
       </rd-widget-body>
     </rd-widget>
   </div>
@@ -24,10 +24,10 @@
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-info-circle" title="Stdout logs"></rd-widget-header>
+      <rd-widget-header icon="fa-info-circle" title="标准输出日志"></rd-widget-header>
       <rd-widget-taskbar>
         <input type="checkbox" ng-model="state.displayTimestampsOut" id="displayAllTsOut" ng-change="toggleTimestampsOut()"/>
-        <label for="displayAllTsOut">Display timestamps</label>
+        <label for="displayAllTsOut">显示时间戳</label>
       </rd-widget-taskbar>
       <rd-widget-body classes="no-padding">
         <div class="panel-body">
@@ -41,10 +41,10 @@
 <div class="row">
   <div class="col-lg-12 col-md-12 col-xs-12">
     <rd-widget>
-      <rd-widget-header icon="fa-exclamation-triangle" title="Stderr logs"></rd-widget-header>
+      <rd-widget-header icon="fa-exclamation-triangle" title="标准输出异常日志"></rd-widget-header>
       <rd-widget-taskbar>
         <input type="checkbox" ng-model="state.displayTimestampsErr" id="displayAllTsErr" ng-change="toggleTimestampsErr()"/>
-        <label for="displayAllTsErr">Display timestamps</label>
+        <label for="displayAllTsErr">显示时间戳</label>
       </rd-widget-taskbar>
       <rd-widget-body classes="no-padding">
         <div class="panel-body">
